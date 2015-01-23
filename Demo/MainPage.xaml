@@ -53,7 +53,7 @@
                 <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
                 <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
             </StackPanel>
-            <TextBlock x:Name="greetingOutput" Style="{StaticResource BaseTextBlockStyle}"/>
+            <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
         </StackPanel>
         
     </Grid>
