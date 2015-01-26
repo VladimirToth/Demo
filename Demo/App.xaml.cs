@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo.Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -57,6 +58,11 @@ namespace Demo
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+
+                //Registrujem instanciu rootFrame, do ktorej sa budu ukladat udaje o stave aplikacie. Klucom je
+                // string appFrame, prostrednictvom ktoreho volam zaregistrovany stav
+                SuspensionManager.RegisterFrame(rootFrame, "appFrame");
+
                 // Set the default language
                 rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 
@@ -99,11 +105,13 @@ namespace Demo
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            await Demo.Common.SuspensionManager.SaveAsync();
             deferral.Complete();
+
         }
     }
 }

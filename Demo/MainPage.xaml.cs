@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -78,6 +79,7 @@ namespace Demo
         /// serializable state.</param>
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
+            e.PageState["greetingOutputText"] = greetingOutput.Text;
         }
 
         #region NavigationHelper registration
@@ -108,9 +110,14 @@ namespace Demo
         {
             greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
 
+        }
 
-
-
+        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
+            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
+            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
+            roamingSettings.Values["userName"] = nameInput.Text;
         }
     }
 }
