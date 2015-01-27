@@ -108,7 +108,7 @@ namespace Demo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
+            //greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
 
         }
 
@@ -117,7 +117,7 @@ namespace Demo
             //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
             //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
             ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
-            roamingSettings.Values["userName"] = nameInput.Text;
+            //roamingSettings.Values["userName"] = nameInput.Text;
         }
     }
 }
