@@ -13,12 +13,12 @@ majo - splashscreen vratane uvodnej grafiky pripadne celkovej grafiky aplikacie,
 
 vlado - hlavna funkcionalita, vyber nastupnej zastavky, vyber destinacie, vypocet ceny listka, zobrazenie casu cesty, dlzky cesty v kilometroch a button, ktory presmeruje uzivatela na dalsiu stranku.
 
-erik - login page, ktora pri prvom spusteni vyzve na zaregitrovanie sa do aplikacie - udaje o registracii ulozi do json file a nasledne vyzve uzivatela na prihlasenie cez prihlasovacie meno a heslo. V pripade nespravneho zadania udajov vypise hlasku, ze prihlasovacie meno alebo heslo boli nespravne. V pripade uspesneho zadania mena a hesla prejde uzivatel na hlavnu stranku aplikacie, ktoru ma starosti vlado.
+erik - stranka, na ktoru uzivatela presmeruje button z hlavnej stranky ked si bude chciet uzivatel kupit listok. Na tejto stranke si moze uzivatel kupit listok a zabookovat pocet miest.
 
-Aktualne nezaradene ulohy> stranka, na ktoru uzivatela presmeruje button z hlavnej stranky ked si bude chciet uzivatel kupit listok. Na tejto stranke si moze uzivatel kupit listok a zabookovat pocet miest.
+Aktualne nezaradene ulohy> 
 
 moznost vytiahnut login z OS
 
-onedrive - pristupny pre uzivatela aplikacie
+onedrive - pristupny pre uzivatela aplikacie na tahanie udajov z json file
 
-nieco navyse> obmedzenie bookovania, lattitude+longitude do jsona a vykreslenie trasy na bing mapach, obrazok mesta po vybere.
+nieco navyse> obmedzenie bookovania, lattitude+longitude do jsona na vykreslenie trasy na bing mapach, obrazok mesta po vybere.
