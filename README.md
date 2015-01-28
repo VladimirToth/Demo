@@ -1,7 +1,13 @@
 This is our simple application for windows 8.1
 
-Team members are: Vlado, Marian, Erik, and Peter
+Team members are: Vlado, Majo, Erik, and Peter
 
 We have to assign work to each other.
 
-erik - json file or c# code which creates json
+peter - json file or c# code which creates json
+
+majo - splashscreen, porovnanie casov
+
+vlado - hlavna funkcionalita, vyber nastupnej zastavky, vyber destinacie, vypocet ceny listka
+
+
