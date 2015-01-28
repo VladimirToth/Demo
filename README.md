@@ -10,4 +10,4 @@ majo - splashscreen, porovnanie casov
 
 vlado - hlavna funkcionalita, vyber nastupnej zastavky, vyber destinacie, vypocet ceny listka
 
-
+erik - login
