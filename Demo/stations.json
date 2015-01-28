@@ -5,7 +5,7 @@
         "name": "Shanghai South",
         "arrives": "",
         "departs": "11:13",
-	"distance(km)": "0",
+	"distance": "0",
 	"duration": "0"
     },
     {
@@ -13,7 +13,7 @@
         "name": "Jiaxing",
         "arrives": "11:55",
         "departs": "11:58",
-	"distance(km)": "80",
+	"distance": "80",
 	"duration": "42min"
     },
     {
@@ -21,7 +21,7 @@
         "name": "Haining",
         "arrives": "12:19",
         "departs": "12:22",
-	"distance(km)": "108",
+	"distance": "108",
 	"duration": "1h 6m"
     },
     {
@@ -29,7 +29,7 @@
         "name": "Hangzhou East",
         "arrives": "13:03",
         "departs": "13:07",
-	"distance(km)": "167",
+	"distance": "167",
 	"duration": "1h 50min"
     },
     {
@@ -37,7 +37,7 @@
         "name": "Yiwu",
         "arrives": "14:13",
         "departs": "14:16",
-	"distance(km)": "312",
+	"distance": "312",
 	"duration": "3h"
     },
     {
@@ -45,7 +45,7 @@
         "name": "Jinhua",
         "arrives": "14:54",
         "departs": "15:00",
-	"distance(km)": "360",
+	"distance": "360",
 	"duration": "3h 41min"
     },
     {
@@ -53,7 +53,7 @@
         "name": "Quzhou",
         "arrives": "15:47",
         "departs": "15:50",
-	"distance(km)": "446",
+	"distance": "446",
 	"duration": "4h 34min"
     },
     {
@@ -61,7 +61,7 @@
         "name": "Shangrao",
         "arrives": "17:05",
         "departs": "17:10",
-	"distance(km)": "557",
+	"distance": "557",
 	"duration": "5h 52min"
     },
     {
@@ -69,7 +69,7 @@
         "name": "Yingtan",
         "arrives": "18:10",
         "departs": "18:25",
-	"distance(km)": "673",
+	"distance": "673",
 	"duration": "6h 57min"
     },
     {
@@ -77,7 +77,7 @@
         "name": "Jian",
         "arrives": "21:31",
         "departs": "21:37",
-	"distance(km)": "987",
+	"distance": "987",
 	"duration": "10h 18min"
     },
     {
@@ -85,7 +85,7 @@
         "name": "Ganzhou",
         "arrives": "23:29",
         "departs": "00:01",
-	"distance(km)": "1173",
+	"distance": "1173",
 	"duration": "12h 16min"
     },
     {
@@ -93,7 +93,7 @@
         "name": "Dayu",
         "arrives": "00:46",
         "departs": "00:49",
-	"distance(km)": "1246",
+	"distance": "1246",
 	"duration": "13h 33min"
     },
     {
@@ -101,7 +101,7 @@
         "name": "Danxiashan",
         "arrives": "01:58",
         "departs": "02:02",
-	"distance(km)": "1346",
+	"distance": "1346",
 	"duration": "14h 45min"
     },
     {
@@ -109,7 +109,7 @@
         "name": "Shaoguan East",
         "arrives": "02:52",
         "departs": "03:00",
-	"distance(km)": "1377",
+	"distance": "1377",
 	"duration": "15h 39min"
     },
     {
@@ -117,6 +117,6 @@
         "name": "Guangzhou",
         "arrives": "05:26",
         "departs": "",
-	"distance(km)": "1598",
+	"distance)": "1598",
 	"duration": "18h 13min"
     }]}
