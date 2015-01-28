@@ -16,3 +16,5 @@ vlado - hlavna funkcionalita, vyber nastupnej zastavky, vyber destinacie, vypoce
 erik - login page, ktora pri prvom spusteni vyzve na zaregitrovanie sa do aplikacie - udaje o registracii ulozi do json file a nasledne vyzve uzivatela na prihlasenie cez prihlasovacie meno a heslo. V pripade nespravneho zadania udajov vypise hlasku, ze prihlasovacie meno alebo heslo boli nespravne. V pripade uspesneho zadania mena a hesla prejde uzivatel na hlavnu stranku aplikacie, ktoru ma starosti vlado.
 
 Aktualne nezaradene ulohy> stranka, na ktoru uzivatela presmeruje button z hlavnej stranky ked si bude chciet uzivatel kupit listok. Na tejto stranke si moze uzivatel kupit listok a zabookovat pocet miest.
+
+moznost vytiahnut login z OS
