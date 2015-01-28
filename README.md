@@ -18,3 +18,7 @@ erik - login page, ktora pri prvom spusteni vyzve na zaregitrovanie sa do aplika
 Aktualne nezaradene ulohy> stranka, na ktoru uzivatela presmeruje button z hlavnej stranky ked si bude chciet uzivatel kupit listok. Na tejto stranke si moze uzivatel kupit listok a zabookovat pocet miest.
 
 moznost vytiahnut login z OS
+
+onedrive - pristupny pre uzivatela aplikacie
+
+nieco navyse> obmedzenie bookovania, lattitude+longitude do jsona a vykreslenie trasy na bing mapach, obrazok mesta po vybere.
