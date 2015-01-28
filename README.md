@@ -4,7 +4,7 @@ Team members are: Vlado, Majo, Erik, and Peter
 
 We have to assign work to each other.
 
-peter - json file or c# code which creates json
+peter - json file or c# code which creates json, testing
 
 majo - splashscreen, porovnanie casov
 
