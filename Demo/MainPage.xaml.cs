@@ -52,6 +52,7 @@ namespace Demo
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
         }
 
         /// <summary>
@@ -126,6 +127,16 @@ namespace Demo
             {
                 this.Frame.Navigate(typeof(PayTicket));
             }
+        }
+
+        private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

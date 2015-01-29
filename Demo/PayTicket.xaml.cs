@@ -47,14 +47,17 @@ namespace Demo
             get { return this.navigationHelper; }
         }
 
-
+        
         public PayTicket()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+
+            
         }
+
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -113,7 +116,10 @@ namespace Demo
 
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
+
+        
+
     }
 }
