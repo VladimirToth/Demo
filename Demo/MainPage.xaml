@@ -62,8 +62,8 @@
                 <ComboBox x:Name="combo2" Margin="100,0,0,0"/>
             </StackPanel>
             <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
-            
+            <Button Content="To PayTicket" HorizontalAlignment="Left" Height="36" Margin="320,0,0,0" Width="180" Click="PayTicket"/>
+
         </StackPanel>
-        
     </Grid>
 </Page>

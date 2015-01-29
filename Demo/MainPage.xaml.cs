@@ -119,5 +119,13 @@ namespace Demo
             ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
             //roamingSettings.Values["userName"] = nameInput.Text;
         }
+
+        private void PayTicket(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(PayTicket));
+            }
+        }
     }
 }
