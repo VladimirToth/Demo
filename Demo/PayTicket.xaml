@@ -14,6 +14,24 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">PayTicket</x:String>
     </Page.Resources>
+    <Page.TopAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+            </Grid>
+        </AppBar>
+    </Page.TopAppBar>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Accept" Label="AppBarButton"/>
+            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -47,7 +65,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <TextBlock x:Name="txtblockNumOfSeats" HorizontalAlignment="Left" Margin="120,49,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Number of Seats:" VerticalAlignment="Top" Height="63" Width="284" FontSize="33"/>
-        <ComboBox x:Name="combBoxSeats" ItemsSource="{Binding Collection}" HorizontalAlignment="Left" Height="53" Margin="420,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged">
+        <ComboBox x:Name="combBoxSeats" ItemsSource="{Binding Collection}" HorizontalAlignment="Left" Height="53" Margin="420,40,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged"/>
             
         <Button x:Name="btnConfirm" Content="Confirm Ticket" HorizontalAlignment="Left" Margin="659,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="290" Height="59" FontSize="28" Click="btnConfirm_Click"/>
     </Grid>

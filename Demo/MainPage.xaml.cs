@@ -127,5 +127,10 @@ namespace Demo
                 this.Frame.Navigate(typeof(PayTicket));
             }
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
