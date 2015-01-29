@@ -75,20 +75,16 @@
         </Grid>
 
         <StackPanel Grid.Row="1" Margin="120,30,0,0">
-            <!--<TextBlock Text="What's your name?" Style="{StaticResource BaseTextBlockStyle}"/>-->
             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
                 <TextBlock Text="Departure Station" Style="{StaticResource BaseTextBlockStyle}"/>
                 <TextBlock Text="Arrival Station" Style="{StaticResource BaseTextBlockStyle}" Margin="100,0,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
-                <!--<Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>-->
-                <!--<TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left" TextChanged="nameInput_TextChanged"/>-->
-                <ComboBox x:Name="combo1"/>
-                <ComboBox x:Name="combo2" Margin="100,0,0,0"/>
+                <ListBox x:Name="listBox1"/>
+                <ListBox x:Name="listBox2" Margin="100,0,0,0"/>
             </StackPanel>
             <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
             <Button Content="To PayTicket" HorizontalAlignment="Left" Height="36" Margin="320,0,0,0" Width="180" Click="PayTicket"/>
-
         </StackPanel>
     </Grid>
 </Page>
