@@ -1,124 +1,122 @@
 {
     "stations": [
-        {
-            "id": "01",
-            "name": "Shanghai South",
-            "arrives": "",
-            "departs": "11:13",
-            "distance(km)": "0",
-            "duration": "0"
-        },
-        {
-            "id": "02",
-            "name": "Jiaxing",
-            "arrives": "11:55",
-            "departs": "11:58",
-            "distance(km)": "80",
-            "duration": "42min"
-        },
-        {
-            "id": "03",
-            "name": "Haining",
-            "arrives": "12:19",
-            "departs": "12:22",
-            "distance(km)": "108",
-            "duration": "1h 6m"
-        },
-        {
-            "id": "04",
-            "name": "Hangzhou East",
-            "arrives": "13:03",
-            "departs": "13:07",
-            "distance(km)": "167",
-            "duration": "1h 50min"
-        },
-        {
-            "id": "05",
-            "name": "Yiwu",
-            "arrives": "14:13",
-            "departs": "14:16",
-            "distance(km)": "312",
-            "duration": "3h"
-        },
-        {
-            "id": "06",
-            "name": "Jinhua",
-            "arrives": "14:54",
-            "departs": "15:00",
-            "distance(km)": "360",
-            "duration": "3h 41min"
-        },
-        {
-            "id": "07",
-            "name": "Quzhou",
-            "arrives": "15:47",
-            "departs": "15:50",
-            "distance(km)": "446",
-            "duration": "4h 34min"
-        },
-        {
-            "id": "08",
-            "name": "Shangrao",
-            "arrives": "17:05",
-            "departs": "17:10",
-            "distance(km)": "557",
-            "duration": "5h 52min"
-        },
-        {
-            "id": "09",
-            "name": "Yingtan",
-            "arrives": "18:10",
-            "departs": "18:25",
-            "distance(km)": "673",
-            "duration": "6h 57min"
-        },
-        {
-            "id": "10",
-            "name": "Jian",
-            "arrives": "21:31",
-            "departs": "21:37",
-            "distance(km)": "987",
-            "duration": "10h 18min"
-        },
-        {
-            "id": "11",
-            "name": "Ganzhou",
-            "arrives": "23:29",
-            "departs": "00:01",
-            "distance(km)": "1173",
-            "duration": "12h 16min"
-        },
-        {
-            "id": "12",
-            "name": "Dayu",
-            "arrives": "00:46",
-            "departs": "00:49",
-            "distance(km)": "1246",
-            "duration": "13h 33min"
-        },
-        {
-            "id": "13",
-            "name": "Danxiashan",
-            "arrives": "01:58",
-            "departs": "02:02",
-            "distance(km)": "1346",
-            "duration": "14h 45min"
-        },
-        {
-            "id": "14",
-            "name": "Shaoguan East",
-            "arrives": "02:52",
-            "departs": "03:00",
-            "distance(km)": "1377",
-            "duration": "15h 39min"
-        },
-        {
-            "id": "15",
-            "name": "Guangzhou",
-            "arrives": "05:26",
-            "departs": "",
-            "distance(km)": "1598",
-            "duration": "18h 13min"
-        }
-    ]
-}
+    {
+        "id": "01",
+        "name": "Shanghai South",
+        "arrives": "",
+        "departs": "11:13",
+	"distance": "0",
+	"duration": "0"
+    },
+    {
+        "id": "02",
+        "name": "Jiaxing",
+        "arrives": "11:55",
+        "departs": "11:58",
+	"distance": "80",
+	"duration": "42min"
+    },
+    {
+        "id": "03",
+        "name": "Haining",
+        "arrives": "12:19",
+        "departs": "12:22",
+	"distance": "108",
+	"duration": "1h 6m"
+    },
+    {
+        "id": "04",
+        "name": "Hangzhou East",
+        "arrives": "13:03",
+        "departs": "13:07",
+	"distance": "167",
+	"duration": "1h 50min"
+    },
+    {
+        "id": "05",
+        "name": "Yiwu",
+        "arrives": "14:13",
+        "departs": "14:16",
+	"distance": "312",
+	"duration": "3h"
+    },
+    {
+        "id": "06",
+        "name": "Jinhua",
+        "arrives": "14:54",
+        "departs": "15:00",
+	"distance": "360",
+	"duration": "3h 41min"
+    },
+    {
+        "id": "07",
+        "name": "Quzhou",
+        "arrives": "15:47",
+        "departs": "15:50",
+	"distance": "446",
+	"duration": "4h 34min"
+    },
+    {
+        "id": "08",
+        "name": "Shangrao",
+        "arrives": "17:05",
+        "departs": "17:10",
+	"distance": "557",
+	"duration": "5h 52min"
+    },
+    {
+        "id": "09",
+        "name": "Yingtan",
+        "arrives": "18:10",
+        "departs": "18:25",
+	"distance": "673",
+	"duration": "6h 57min"
+    },
+    {
+        "id": "10",
+        "name": "Jian",
+        "arrives": "21:31",
+        "departs": "21:37",
+	"distance": "987",
+	"duration": "10h 18min"
+    },
+    {
+        "id": "11",
+        "name": "Ganzhou",
+        "arrives": "23:29",
+        "departs": "00:01",
+	"distance": "1173",
+	"duration": "12h 16min"
+    },
+    {
+        "id": "12",
+        "name": "Dayu",
+        "arrives": "00:46",
+        "departs": "00:49",
+	"distance": "1246",
+	"duration": "13h 33min"
+    },
+    {
+        "id": "13",
+        "name": "Danxiashan",
+        "arrives": "01:58",
+        "departs": "02:02",
+	"distance": "1346",
+	"duration": "14h 45min"
+    },
+    {
+        "id": "14",
+        "name": "Shaoguan East",
+        "arrives": "02:52",
+        "departs": "03:00",
+	"distance": "1377",
+	"duration": "15h 39min"
+    },
+    {
+        "id": "15",
+        "name": "Guangzhou",
+        "arrives": "05:26",
+        "departs": "",
+	"distance": "1598",
+	"duration": "18h 13min"
+    }]}
