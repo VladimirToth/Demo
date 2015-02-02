@@ -115,3 +115,26 @@ namespace Demo
         }
     }
 }
+
+
+
+
+//string url = "https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json";
+
+//WebClient wc = new WebClient();
+//string jsondata= wc.DownloadString(url);
+
+//Rootobject data= JsonConvert.DeserializeObject<Rootobject>(jsondata);
+
+////foreach (var glascontainer in data.glascontainer)
+////{
+////    Console.WriteLine(stations.id+ "" + stations.name)
+////}
+
+//var result = from stations in data.stations where stations.distance == "167" select stations;
+
+//foreach (var stations in result)
+//{
+//    Console.WriteLine(stations.id+ " " + stations.name);
+
+//}

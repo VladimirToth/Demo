@@ -14,7 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+//using System.Net;
+using Newtonsoft.Json;
+using Windows.Web.Http;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace Demo
@@ -106,9 +108,34 @@ namespace Demo
         #endregion
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void GetData()
         {
             //greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
+            //string url = "https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json";
+            
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
+            var jsonString = await response.Content.ReadAsStringAsync();
+            //WebClient wc = new WebClient();
+            //string jsondata = wc.DownloadString(url);
+
+            var _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+
+
+            //Rootobject data = JsonConvert.DeserializeObject<Rootobject>(jsondata);
+
+            //foreach (var glascontainer in data.glascontainer)
+            //{
+            //    Console.WriteLine(stations.id+ "" + stations.name)
+            //}
+
+            //var result = from stations in data.stations where stations.distance == "167" select stations;
+
+            foreach (var station in _Rootobject.stations)
+            {
+                greetingOutput.Text = station.id + " " + station.name;
+
+            }
 
         }
 
@@ -122,6 +149,8 @@ namespace Demo
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
+            GetData();
+
             if (this.Frame != null)
             {
                 this.Frame.Navigate(typeof(PayTicket));
