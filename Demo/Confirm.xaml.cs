@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,7 +21,7 @@ namespace Demo
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Confirm : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -46,13 +45,12 @@ namespace Demo
         }
 
 
-        public MainPage()
+        public Confirm()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-
         }
 
         /// <summary>
@@ -80,7 +78,6 @@ namespace Demo
         /// serializable state.</param>
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            e.PageState["greetingOutputText"] = greetingOutput.Text;
         }
 
         #region NavigationHelper registration
@@ -107,41 +104,5 @@ namespace Demo
         #endregion
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
-
-        }
-
-        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
-            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
-            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
-            //roamingSettings.Values["userName"] = nameInput.Text;
-        }
-
-        private void PayTicket(object sender, RoutedEventArgs e)
-        {
-            if (this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(PayTicket));
-            }
-        }
-
-        private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

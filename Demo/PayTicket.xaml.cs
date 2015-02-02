@@ -109,17 +109,31 @@ namespace Demo
 
         #endregion
 
-        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        private void Confirm_Ticket_Click(object sender, RoutedEventArgs e)
         {
+            Guid g = Guid.NewGuid();
+            string GuidString = Convert.ToBase64String(g.ToByteArray());
+            GuidString = GuidString.Replace("=", "");
+            GuidString = GuidString.Replace("+", "");
 
         }
 
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ComboBox comBoxSeats = new ComboBox();
+            comBoxSeats.Items.Add("Item 1");
+            comBoxSeats.Items.Add("Item 2");
+            comBoxSeats.Items.Add("Item 3");
+            comBoxSeats.Width = 200;
+            comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
         }
 
-        
-
+        private void Confirm(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame != null)
+            {
+                this.Frame.Navigate(typeof(Confirm));
+            }
+        }
     }
 }
