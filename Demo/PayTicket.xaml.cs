@@ -121,9 +121,7 @@ namespace Demo
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comBoxSeats = new ComboBox();
-            comBoxSeats.Items.Add("Item 1");
-            comBoxSeats.Items.Add("Item 2");
-            comBoxSeats.Items.Add("Item 3");
+            
             comBoxSeats.Width = 200;
             comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
         }
