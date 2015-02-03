@@ -22,7 +22,6 @@ namespace Demo
         public string duration { get; set; }
     }
 
-
 }
 
 

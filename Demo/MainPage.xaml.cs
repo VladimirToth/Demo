@@ -138,7 +138,6 @@ namespace Demo
 
         }
 
-
         
         private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -150,7 +149,7 @@ namespace Demo
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
-            GetData();
+
         }
 
         private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -166,6 +165,14 @@ namespace Demo
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void listBox1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            foreach (var station in _Rootobject.stations)
+            {
+                listBox2.Items.Add(station.name);
+            }
         }
     }
 }
