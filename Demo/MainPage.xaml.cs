@@ -139,13 +139,6 @@ namespace Demo
         }
 
         
-        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
-            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
-            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
-            //roamingSettings.Values["userName"] = nameInput.Text;
-        }
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
@@ -167,12 +160,29 @@ namespace Demo
 
         }
 
-        private void listBox1_Tapped(object sender, TappedRoutedEventArgs e)
+
+        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            foreach (var station in _Rootobject.stations)
-            {
-                listBox2.Items.Add(station.name);
-            }
+            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
+            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
+            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
+            //roamingSettings.Values["userName"] = nameInput.Text;
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox lb = (ListBox)sender;
+            string selected = lb.SelectedItem as string;
+        
+            if (selected == null)
+	        {
+                //napisat kod pre pripad, ak je vyber prazdny
+	        }
+
+            //for (int i = 0; i < length; i++)
+            //{
+
+            //}
         }
     }
 }
