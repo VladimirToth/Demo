@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 //using System.Net;
 using Newtonsoft.Json;
 using Windows.Web.Http;
+using System.Threading.Tasks;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace Demo
@@ -28,6 +29,7 @@ namespace Demo
     {
 
         private NavigationHelper navigationHelper;
+        private Rootobject _Rootobject;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace Demo
         public MainPage()
         {
             this.InitializeComponent();
+            this.GetData();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
@@ -108,37 +111,34 @@ namespace Demo
         #endregion
 
 
+        //private async Task<string> Method()
+        //{
+        //    HttpClient client = new HttpClient();
+        //    string json = await client.GetStringAsync("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json");
+
+        //    return json;
+        //}
+
+
         private async void GetData()
         {
-            //greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
-            //string url = "https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json";
-            
+
             var client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
             var jsonString = await response.Content.ReadAsStringAsync();
-            //WebClient wc = new WebClient();
-            //string jsondata = wc.DownloadString(url);
 
-            var _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
-
-
-            //Rootobject data = JsonConvert.DeserializeObject<Rootobject>(jsondata);
-
-            //foreach (var glascontainer in data.glascontainer)
-            //{
-            //    Console.WriteLine(stations.id+ "" + stations.name)
-            //}
-
-            //var result = from stations in data.stations where stations.distance == "167" select stations;
+            _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+            int numberOfStations = _Rootobject.stations.Count();
 
             foreach (var station in _Rootobject.stations)
             {
-                greetingOutput.Text = station.id + " " + station.name;
-
+                listBox1.Items.Add(station.name);
             }
 
         }
 
+
+        
         private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
@@ -150,11 +150,6 @@ namespace Demo
         private void PayTicket(object sender, RoutedEventArgs e)
         {
             GetData();
-
-            if (this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(PayTicket));
-            }
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
