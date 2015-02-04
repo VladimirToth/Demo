@@ -10,7 +10,10 @@
     <Grid Background="Ivory">
         <Canvas>
             <Image x:Name="splashImage" Source="Assets/SplashScreen.jpg"/>
-            <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"></ProgressRing>
+            <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"></ProgressRing> 
         </Canvas>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+           <Button x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center" Click="DismissSplashButton_Click" />
+        </StackPanel>
     </Grid>
 </Page>
