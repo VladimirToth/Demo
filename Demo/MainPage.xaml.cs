@@ -146,6 +146,7 @@ namespace Demo
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(PayTicket));
 
         }
 
