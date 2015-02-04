@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Threading.Tasks;
+using EASendMailRT;
+
 
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
@@ -29,6 +32,7 @@ namespace Demo
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -121,17 +125,66 @@ namespace Demo
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comBoxSeats = new ComboBox();
-            
             comBoxSeats.Width = 200;
             comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
         }
 
-        private void Confirm(object sender, RoutedEventArgs e)
+        
+
+        private async void btnSenda_Click(object sender, RoutedEventArgs e)
         {
+            btnSend.IsEnabled = false;
+            await Send_Email();
+            btnSend.IsEnabled = true;
+
             if (this.Frame != null)
             {
                 this.Frame.Navigate(typeof(Confirm));
             }
+        }
+
+        private async Task Send_Email()
+        {
+            String Result = "";
+            string email = txtBoxEmail.Text;
+            try
+            {
+                SmtpMail oMail = new SmtpMail("TryIt");
+                SmtpClient oSmtp = new SmtpClient();
+
+                // Set your gmail email address
+                oMail.From = new MailAddress("trainscheduleconfirmation@gmail.com");
+
+                // Add recipient email address, please change it to yours
+                oMail.To.Add(new MailAddress(email));
+
+                // Set email subject and email body text
+                oMail.Subject = "test email from C# XAML project";
+                oMail.TextBody = "this is a test email sent from Windows Store App using Gmail. feel me suckers...";
+
+                // Gmail SMTP server
+                SmtpServer oServer = new SmtpServer("smtp.gmail.com");
+
+                // User and password for ESMTP authentication           
+                oServer.User = "trainscheduleconfirmation@gmail.com";
+                oServer.Password = "abc123456789def";
+
+                // Enable TLS connection on 25 port, please add this line
+                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                await oSmtp.SendMailAsync(oServer, oMail);
+                Result = "Email was sent successfully!";
+            }
+            catch (Exception ep)
+            {
+                Result = String.Format("Failed to send email with the following error: {0}", ep.Message);
+            }
+
+            // Display Result by Diaglog box
+            Windows.UI.Popups.MessageDialog dlg = new
+                Windows.UI.Popups.MessageDialog(Result);
+
+            await dlg.ShowAsync();
         }
     }
 }

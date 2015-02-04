@@ -57,6 +57,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
 
         <!-- Back button and page title -->
         <Grid>

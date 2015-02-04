@@ -103,6 +103,11 @@ namespace Demo
 
         #endregion
 
-
+        private void txtboxID_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            Random rd = new Random();
+            int number = rd.Next(1,154845623);
+            txtboxID.Text = Convert.ToString(number);
+        }
     }
 }

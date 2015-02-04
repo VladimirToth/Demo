@@ -47,7 +47,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <TextBlock x:Name="txtblockYourID" HorizontalAlignment="Left" Height="50" Margin="90,45,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Your ticket ID:" VerticalAlignment="Top" Width="164" FontSize="26"/>
-        <TextBlock x:Name="txtboxID" HorizontalAlignment="Left" Height="42" Margin="284,39,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" FontSize="22" Foreground="{x:Null}">
+        <TextBlock x:Name="txtboxID" HorizontalAlignment="Left" Height="42" Margin="298,45,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" FontSize="22" Foreground="{x:Null}" SelectionChanged="txtboxID_SelectionChanged">
             <TextBlock.DataContext>
                 <local:PayTicket/>
             </TextBlock.DataContext>
