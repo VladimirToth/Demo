@@ -20,6 +20,9 @@ namespace Demo
         public string departs { get; set; }
         public string distance { get; set; }
         public string duration { get; set; }
+        public string latitude { get; set; }
+        public string longitude { get; set; }
+    
     }
 
 }
