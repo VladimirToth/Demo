@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
 using Windows.Web.Http;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace Demo
@@ -59,6 +60,9 @@ namespace Demo
             this.navigationHelper.SaveState += navigationHelper_SaveState;
 
         }
+
+   
+
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
