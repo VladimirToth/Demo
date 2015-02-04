@@ -133,13 +133,13 @@ namespace Demo
             var jsonString = await response.Content.ReadAsStringAsync();
 
             _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+            
             int numberOfStations = _Rootobject.stations.Count();
 
-            foreach (var station in _Rootobject.stations)
+            for (int i = 0; i < numberOfStations - 1; i++)
             {
-                listBox1.Items.Add(station.name);
+                listBox1.Items.Add(_Rootobject.stations[i].name);
             }
-
         }
 
         
@@ -183,6 +183,7 @@ namespace Demo
 	        {
                 //napisat kod pre pripad, ak je vyber prazdny
 	        }
+
 
             //for (int i = 0; i < length; i++)
             //{
