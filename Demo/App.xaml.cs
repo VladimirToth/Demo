@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -40,6 +41,7 @@ namespace Demo
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+        
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
@@ -94,7 +96,27 @@ namespace Demo
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+        
         }
+
+        //internal async Task PerformDataFetch()
+        //        {
+        //    // data loading here
+
+        //            await Task.Run(() =>
+        //        {
+        //            RemoveExtendedSplash();
+        //        });
+        //}
+
+        //internal void RemoveExtendedSplash()
+        //{
+        //    if (rootFrame != null) rootFrame.Navigate(typeof(MainPage));
+        //}
+    
+        // Ensure the current window is active
+       //   Window.Current.Activate();
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
@@ -121,5 +143,6 @@ namespace Demo
             deferral.Complete();
 
         }
+        
     }
 }

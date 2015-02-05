@@ -7,13 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Ivory">
+    <Grid Background="Red">
         <Canvas>
             <Image x:Name="splashImage" Source="Assets/SplashScreen.jpg"/>
-            <ProgressRing Name="splashProgressRing" IsActive="True" Width="20" HorizontalAlignment="Center"></ProgressRing> 
+            <ProgressRing Width="20" Foreground="Blue" Name="splashProgressRing" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
+            <ProgressRing Width="40" Height="40" Foreground="Brown" Name="splashProgressRing1" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
+            <ProgressRing Width="60" Height="35" Foreground="Gold" Name="splashProgressRing2" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
+            <ProgressRing Width="80" Height="45" Foreground="Black" Name="splashProgressRing3" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
         </Canvas>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
-           <Button x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center" Click="DismissSplashButton_Click" />
+           <!--<Button x:Name="DismissSplash" Content="Dismiss extended splash screen" HorizontalAlignment="Center" />-->
         </StackPanel>
     </Grid>
 </Page>
