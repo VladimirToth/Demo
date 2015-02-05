@@ -97,7 +97,7 @@ namespace Demo
             // Ensure the current window is active
             Window.Current.Activate();
 
-        }
+        
         }
 
         //internal async Task PerformDataFetch()

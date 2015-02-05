@@ -57,9 +57,13 @@ namespace Demo
             RestoreStateAsync(loadState);
         }
 
-        void splash_Dismissed(SplashScreen sender, object args)
+        async void splash_Dismissed(SplashScreen sender, object args)
         {
-               DismissExtendedSplash();
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+ DismissExtendedSplash();
+            });
+              
         }
         void PositionImage()
         {
@@ -84,13 +88,12 @@ namespace Demo
             splashProgressRing3.SetValue(Canvas.LeftProperty, splashImageRect.X + (splashImageRect.Width * 0.5) - (splashProgressRing3.Width * 0.5));
             splashProgressRing3.SetValue(Canvas.TopProperty, (splashImageRect.Y + splashImageRect.Height + splashImageRect.Height * 0.1));
         }
-        async void DismissExtendedSplash()
+         void DismissExtendedSplash()
         {
-            await Task.Run(() =>
-             {
+            
                  rootFrame.Navigate(typeof(Demo.MainPage));
                  Window.Current.Content = rootFrame;
-             });
+             
                 // Navigate to mainpage
            // rootFrame.Navigate(typeof(MainPage));
             // Place the frame in the current Window
