@@ -193,12 +193,16 @@ namespace Demo
         private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox lb = (ListBox)sender;
-            int selectedIndex2 = lb.SelectedIndex;
+            Data.selectedIndex2 = lb.SelectedIndex;
 
+            //listView1.Items.Clear();
 
-            for (int i = Data.selectedIndex1 + 1; i < selectedIndex2; i++)
+            for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
             {
-                stationOutput.Text += _Rootobject.stations[i].name;
+                //listView1.Items.Add(
+                //    _Rootobject.stations[i].name + " " +
+                //    _Rootobject.stations[i].distance + " " + 
+                //    _Rootobject.stations[i].arrives);
 
             }
 
