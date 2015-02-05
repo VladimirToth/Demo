@@ -165,9 +165,9 @@ namespace Demo
                     oMail.To.Add(new MailAddress(email));
 
                     // Nastav príslušné body
-                    oMail.Subject = "";
+                    oMail.Subject = "Train confirmation:" + number;
 
-                    oMail.TextBody = "";
+                    oMail.TextBody = "bla bla bla";
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
 
@@ -182,7 +182,7 @@ namespace Demo
                 }
                 catch (Exception ep)
                 {
-                    Result = String.Format("Failed to send email with the following error: {0}", ep.Message);
+                    Result = String.Format("Please, choose your seats and write your email.");
                 }
 
                 Windows.UI.Popups.MessageDialog dlg = new
