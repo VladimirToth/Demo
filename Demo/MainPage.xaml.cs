@@ -14,7 +14,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+//using System.Net;
+using Newtonsoft.Json;
+using Windows.Web.Http;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace Demo
@@ -26,6 +30,7 @@ namespace Demo
     {
 
         private NavigationHelper navigationHelper;
+        private Rootobject _Rootobject;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
         /// <summary>
@@ -49,11 +54,15 @@ namespace Demo
         public MainPage()
         {
             this.InitializeComponent();
+            this.GetData();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-
+            
         }
+
+   
+
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -107,26 +116,38 @@ namespace Demo
         #endregion
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //greetingOutput.Text = "Nazdarek, " + nameInput.Text + "!";
+        //private async Task<string> Method()
+        //{
+        //    HttpClient client = new HttpClient();
+        //    string json = await client.GetStringAsync("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json");
 
+        //    return json;
+        //}
+
+
+        private async void GetData()
+        {
+
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+            
+            int numberOfStations = _Rootobject.stations.Count();
+
+            for (int i = 0; i < numberOfStations - 1; i++)
+            {
+                listBox1.Items.Add(_Rootobject.stations[i].name);
+            }
         }
 
-        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
-            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
-            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
-            //roamingSettings.Values["userName"] = nameInput.Text;
-        }
+        
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
-            if (this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(PayTicket));
-            }
+            this.Frame.Navigate(typeof(PayTicket));
+
         }
 
         private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -142,6 +163,32 @@ namespace Demo
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+
+        private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
+            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
+            ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
+            //roamingSettings.Values["userName"] = nameInput.Text;
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox lb = (ListBox)sender;
+            string selected = lb.SelectedItem as string;
+        
+            if (selected == null)
+	        {
+                //napisat kod pre pripad, ak je vyber prazdny
+	        }
+
+
+            //for (int i = 0; i < length; i++)
+            //{
+
+            //}
         }
     }
 }

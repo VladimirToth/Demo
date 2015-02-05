@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo
+{
+
+    public class Rootobject
+    {
+        public Station[] stations { get; set; }
+    }
+
+    public class Station
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string arrives { get; set; }
+        public string departs { get; set; }
+        public string distance { get; set; }
+        public string duration { get; set; }
+        public string latitude { get; set; }
+        public string longitude { get; set; }
+    
+    }
+
+}
+
+

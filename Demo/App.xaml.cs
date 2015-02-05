@@ -73,6 +73,14 @@ namespace Demo
                     //TODO: Load state from previously suspended application
                 }
 
+                if (e.PreviousExecutionState != ApplicationExecutionState.Running)
+                {
+                    bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                    Splashscreen extendedSplash = new Splashscreen(e.SplashScreen, loadState);
+                    rootFrame.Content = extendedSplash;
+                    Window.Current.Content = rootFrame;
+                }
+
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
