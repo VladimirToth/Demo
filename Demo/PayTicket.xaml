@@ -30,7 +30,7 @@
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
 
         <!-- Back button and page title -->
         <Grid>
@@ -49,14 +49,17 @@
         </Grid>
         <TextBlock x:Name="txtblockNumOfSeats" HorizontalAlignment="Left" Margin="120,49,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Number of Seats:" VerticalAlignment="Top" Height="42" Width="190" FontSize="24"/>
         <TextBlock x:Name="txtblockEmail" HorizontalAlignment="Left" Margin="120,150,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Email adress:" VerticalAlignment="Top" Height="53" Width="142" FontSize="24"/>
-        <ComboBox x:Name="combBoxSeats" ItemsSource="{Binding CacheMode, ElementName=combBoxSeats}"  HorizontalAlignment="Left" Height="53" Margin="384,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged">
+        <ComboBox x:Name="combBoxSeats" HorizontalAlignment="Left" Height="53" Margin="384,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged" FontSize="24">
             <x:String>1 seat</x:String>
             <x:String>2 seats</x:String>
             <x:String>3 seats</x:String>
             <x:String>4 seats</x:String>
             <x:String>5 seats</x:String>
         </ComboBox>
-        <Button x:Name="btnConfirm" Content="Confirm Ticket" HorizontalAlignment="Left" Margin="433,251,0,0" Grid.Row="1" VerticalAlignment="Top" Width="230" Height="51" FontSize="27" Click="Confirm"/>
-        <TextBox x:Name="txtBoxEmail" HorizontalAlignment="Left" Height="48" Margin="298,139,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="30"/>
+        <TextBox x:Name="txtBoxEmail" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="48" Margin="298,139,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="24"/>
+        <Button Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" 
+     Height="51" Margin="698,251,0,0" VerticalAlignment="Top" Width="250" Grid.Row="1" Click="btnSenda_Click" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Name="textStatus" Height="32"
+     Margin="409,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="863"/>
     </Grid>
 </Page>

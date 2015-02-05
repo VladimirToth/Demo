@@ -77,12 +77,12 @@
                 <ListBox x:Name="listBox2" VerticalAlignment="Top" Height="400" Margin="100,0,0,0" SelectionChanged="listBox2_SelectionChanged"/>
                 <TextBlock x:Name="stationOutput" VerticalAlignment="Top" Height="400" Margin="200,0,0,0"></TextBlock>
             </StackPanel>
-        </StackPanel>
-        
+            </StackPanel>
+            
         <StackPanel Grid.Row="2" Margin="60,20,0,10">
                 <Button Content="To PayTicket" HorizontalAlignment="Left" Height="36" Margin="320,0,0,0" Width="180" Click="PayTicket"/>
-                <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
+            <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
         </StackPanel>
-           
+
     </Grid>
 </Page>
