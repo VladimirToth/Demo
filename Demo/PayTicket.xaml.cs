@@ -127,6 +127,7 @@ namespace Demo
             ComboBox comBoxSeats = new ComboBox();
             comBoxSeats.Width = 200;
             comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
+       
         }
 
         
@@ -137,54 +138,58 @@ namespace Demo
             await Send_Email();
             btnSend.IsEnabled = true;
 
-            if (this.Frame != null)
-            {
-                this.Frame.Navigate(typeof(Confirm));
-            }
         }
 
         private async Task Send_Email()
         {
             String Result = "";
             string email = txtBoxEmail.Text;
-            try
+            string seats = combBoxSeats.SelectedItem as string;
+
+            if (seats != null)
             {
-                SmtpMail oMail = new SmtpMail("TryIt");
-                SmtpClient oSmtp = new SmtpClient();
 
-                // Set your gmail email address
-                oMail.From = new MailAddress("trainscheduleconfirmation@gmail.com");
+                Random rd = new Random();
+                int number = rd.Next(1, 999999);
 
-                // Add recipient email address, please change it to yours
-                oMail.To.Add(new MailAddress(email));
+                try
+                {
 
-                // Set email subject and email body text
-                oMail.Subject = "test email from C# XAML project";
-                oMail.TextBody = "this is a test email sent from Windows Store App using Gmail. feel me suckers...";
 
-                // Gmail SMTP server
-                SmtpServer oServer = new SmtpServer("smtp.gmail.com");
+                    SmtpMail oMail = new SmtpMail("TryIt");
+                    SmtpClient oSmtp = new SmtpClient();
 
-                // User and password for ESMTP authentication           
-                oServer.User = "trainscheduleconfirmation@gmail.com";
-                oServer.Password = "abc123456789def";
+                    // Adresa našej emailky
+                    oMail.From = new MailAddress("trainscheduleconfirmation@gmail.com");
 
-                // Enable TLS connection on 25 port, please add this line
-                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+                    oMail.To.Add(new MailAddress(email));
 
-                await oSmtp.SendMailAsync(oServer, oMail);
-                Result = "Email was sent successfully!";
+                    // Nastav príslušné body
+                    oMail.Subject = "";
+
+                    oMail.TextBody = "";
+
+                    SmtpServer oServer = new SmtpServer("smtp.gmail.com");
+
+                    // Loginy do našej emailky           
+                    oServer.User = "trainscheduleconfirmation@gmail.com";
+                    oServer.Password = "abc123456789def";
+
+                    oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                    await oSmtp.SendMailAsync(oServer, oMail);
+                    Result = "Email was sent successfully!";
+                }
+                catch (Exception ep)
+                {
+                    Result = String.Format("Failed to send email with the following error: {0}", ep.Message);
+                }
+
+                Windows.UI.Popups.MessageDialog dlg = new
+                    Windows.UI.Popups.MessageDialog(Result);
+
+                await dlg.ShowAsync();
             }
-            catch (Exception ep)
-            {
-                Result = String.Format("Failed to send email with the following error: {0}", ep.Message);
-            }
-
-            // Display Result by Diaglog box
-            Windows.UI.Popups.MessageDialog dlg = new
-                Windows.UI.Popups.MessageDialog(Result);
-
-            await dlg.ShowAsync();
         }
     }
 }

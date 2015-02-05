@@ -86,7 +86,6 @@
             </StackPanel>
             <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
             <Button Content="To PayTicket" HorizontalAlignment="Left" Height="36" Margin="320,0,0,0" Width="180" Click="PayTicket"/>
-            <Button x:Name="btnDataButton" Content="Data Button" HorizontalAlignment="Left" Height="50" Margin="532,0,0,0" Width="226"/>
         </StackPanel>
     </Grid>
 </Page>
