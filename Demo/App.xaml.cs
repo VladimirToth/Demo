@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -25,6 +26,7 @@ namespace Demo
     /// </summary>
     sealed partial class App : Application
     {
+        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -40,6 +42,7 @@ namespace Demo
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+        
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
@@ -79,11 +82,18 @@ namespace Demo
                     Splashscreen extendedSplash = new Splashscreen(e.SplashScreen, loadState);
                     rootFrame.Content = extendedSplash;
                     Window.Current.Content = rootFrame;
+                         
                 }
 
+
+
                 // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
+                //rootFrame.Navigate(typeof(Splashscreen), e.SplashScreen);
+                //Window.Current.Content = rootFrame;
+                //await PerformDataFetch();
+                Window.Current.Activate();
+                //await PerformDataFetch();
+            
 
             if (rootFrame.Content == null)
             {
@@ -93,8 +103,28 @@ namespace Demo
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
             // Ensure the current window is active
-            Window.Current.Activate();
+          Window.Current.Activate();
+
+}
         }
+            
+        //internal async Task PerformDataFetch()
+        //        {
+        //    // data loading here
+
+        //            await Task.Run(() =>
+        //        {
+        //            RemoveExtendedSplash();
+        //        });
+        //}
+
+        //internal void RemoveExtendedSplash()
+        //{
+        //    if (rootFrame != null) rootFrame.Navigate(typeof(MainPage));
+        //}
+    
+        // Ensure the current window is active
+       //   Window.Current.Activate();
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
@@ -121,8 +151,27 @@ namespace Demo
             deferral.Complete();
 
         }
+        
     }
+       
+
 }
+       
+        //internal async Task PerformDataFetch()
+        //{
+        //    // data loading here
+
+        //    await Task.Run(() =>
+        //        {
+        //            RemoveExtendedSplash();
+        //        });
+        //}
+
+        //internal void RemoveExtendedSplash()
+        //{
+        //    if (rootFrame != null) rootFrame.Navigate(typeof(MainPage));
+        //}
+    
 
 
 
