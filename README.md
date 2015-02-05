@@ -19,6 +19,4 @@ Aktualne nezaradene ulohy>
 
 moznost vytiahnut login z OS
 
-onedrive - pristupny pre uzivatela aplikacie na tahanie udajov z json file
-
 nieco navyse> obmedzenie bookovania, lattitude+longitude do jsona na vykreslenie trasy na bing mapach, obrazok mesta po vybere.

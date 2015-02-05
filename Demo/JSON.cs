@@ -18,8 +18,11 @@ namespace Demo
         public string name { get; set; }
         public string arrives { get; set; }
         public string departs { get; set; }
-        public string distance { get; set; }
+        public int distance { get; set; }
         public string duration { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+    
     }
 
 }

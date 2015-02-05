@@ -103,10 +103,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Page Include="Confirm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +124,7 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="JSON.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -164,6 +161,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="EASendMailRT">
+      <HintPath>References\EASendMailRT.winmd</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>

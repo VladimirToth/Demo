@@ -33,6 +33,7 @@ namespace Demo
         private Rootobject _Rootobject;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
+
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
@@ -60,8 +61,6 @@ namespace Demo
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             
         }
-
-   
 
 
         /// <summary>
@@ -133,19 +132,20 @@ namespace Demo
             var jsonString = await response.Content.ReadAsStringAsync();
 
             _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
-            int numberOfStations = _Rootobject.stations.Count();
+            
+            Data.numberOfStations = _Rootobject.stations.Count();
 
-            foreach (var station in _Rootobject.stations)
+            for (int i = 0; i < Data.numberOfStations - 1; i++)
             {
-                listBox1.Items.Add(station.name);
+                listBox1.Items.Add(_Rootobject.stations[i].name);
             }
-
         }
 
         
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(PayTicket));
 
         }
 
@@ -176,17 +176,32 @@ namespace Demo
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox lb = (ListBox)sender;
-            string selected = lb.SelectedItem as string;
-        
-            if (selected == null)
-	        {
-                //napisat kod pre pripad, ak je vyber prazdny
-	        }
+            Data.selectedIndex1 = lb.SelectedIndex;
 
-            //for (int i = 0; i < length; i++)
+            //if (selected == null)
             //{
-
+            //    //napisat kod pre pripad, ak je vyber prazdny
             //}
+            listBox2.Items.Clear();
+            for (int i = Data.selectedIndex1 + 1; i < Data.numberOfStations; i++)
+            {
+                listBox2.Items.Add(_Rootobject.stations[i].name);
+            }
+
+        }
+
+        private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox lb = (ListBox)sender;
+            int selectedIndex2 = lb.SelectedIndex;
+
+
+            for (int i = Data.selectedIndex1 + 1; i < selectedIndex2; i++)
+            {
+                stationOutput.Text += _Rootobject.stations[i].name;
+
+            }
+
         }
     }
 }

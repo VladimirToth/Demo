@@ -26,7 +26,6 @@ namespace Demo
     /// </summary>
     sealed partial class App : Application
     {
-        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -82,18 +81,11 @@ namespace Demo
                     Splashscreen extendedSplash = new Splashscreen(e.SplashScreen, loadState);
                     rootFrame.Content = extendedSplash;
                     Window.Current.Content = rootFrame;
-                         
                 }
 
-
-
                 // Place the frame in the current Window
-                //rootFrame.Navigate(typeof(Splashscreen), e.SplashScreen);
-                //Window.Current.Content = rootFrame;
-                //await PerformDataFetch();
-                Window.Current.Activate();
-                //await PerformDataFetch();
-            
+                Window.Current.Content = rootFrame;
+            }
 
             if (rootFrame.Content == null)
             {
@@ -103,11 +95,11 @@ namespace Demo
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
             // Ensure the current window is active
-          Window.Current.Activate();
+            Window.Current.Activate();
 
-}
         }
-            
+        }
+
         //internal async Task PerformDataFetch()
         //        {
         //    // data loading here
@@ -153,45 +145,4 @@ namespace Demo
         }
         
     }
-       
-
 }
-       
-        //internal async Task PerformDataFetch()
-        //{
-        //    // data loading here
-
-        //    await Task.Run(() =>
-        //        {
-        //            RemoveExtendedSplash();
-        //        });
-        //}
-
-        //internal void RemoveExtendedSplash()
-        //{
-        //    if (rootFrame != null) rootFrame.Navigate(typeof(MainPage));
-        //}
-    
-
-
-
-
-//string url = "https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json";
-
-//WebClient wc = new WebClient();
-//string jsondata= wc.DownloadString(url);
-
-//Rootobject data= JsonConvert.DeserializeObject<Rootobject>(jsondata);
-
-////foreach (var glascontainer in data.glascontainer)
-////{
-////    Console.WriteLine(stations.id+ "" + stations.name)
-////}
-
-//var result = from stations in data.stations where stations.distance == "167" select stations;
-
-//foreach (var stations in result)
-//{
-//    Console.WriteLine(stations.id+ " " + stations.name);
-
-//}
