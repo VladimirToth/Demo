@@ -56,9 +56,9 @@
             <x:String>4 seats</x:String>
             <x:String>5 seats</x:String>
         </ComboBox>
-        <TextBox x:Name="txtBoxEmail" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="48" Margin="298,139,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="24"/>
+        <TextBox x:Name="txtBoxEmail" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="45" Margin="298,139,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="24"/>
         <Button Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" 
-     Height="51" Margin="698,251,0,0" VerticalAlignment="Top" Width="250" Grid.Row="1" Click="btnSenda_Click" FontSize="24"/>
+     Height="39" Margin="570,240,0,0" VerticalAlignment="Top" Width="210" Grid.Row="1" Click="btnSenda_Click" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Name="textStatus" Height="32"
      Margin="409,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="863"/>
     </Grid>
