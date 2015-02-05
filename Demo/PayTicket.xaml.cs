@@ -165,9 +165,9 @@ namespace Demo
                     oMail.To.Add(new MailAddress(email));
 
                     // Nastav príslušné body
-                    oMail.Subject = "Train confirmation:" + number;
+                    oMail.Subject = "Train confirmation: " + number;
 
-                    oMail.TextBody = "bla bla bla";
+                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was" ;
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
 
@@ -180,9 +180,10 @@ namespace Demo
                     await oSmtp.SendMailAsync(oServer, oMail);
                     Result = "Email was sent successfully!";
                 }
-                catch (Exception ep)
+                catch
                 {
-                    Result = String.Format("Please, choose your seats and write your email.");
+                    Result = String.Format("Please, write your email.");
+
                 }
 
                 Windows.UI.Popups.MessageDialog dlg = new

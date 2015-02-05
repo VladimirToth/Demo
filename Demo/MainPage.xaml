@@ -14,7 +14,7 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Time Table</x:String>
     </Page.Resources>
-    
+
     <Page.TopAppBar>
         <AppBar>
             <Grid>
@@ -27,7 +27,7 @@
             </Grid>
         </AppBar>
     </Page.TopAppBar>
-    
+
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="Refresh" Label="Refresh" Click="AppBarButton_Click"/>
@@ -77,10 +77,10 @@
                 <ListBox x:Name="listBox2" VerticalAlignment="Top" Height="400" Margin="100,0,0,0" SelectionChanged="listBox2_SelectionChanged"/>
                 <TextBlock x:Name="stationOutput" VerticalAlignment="Top" Height="400" Margin="200,0,0,0"></TextBlock>
             </StackPanel>
-            </StackPanel>
-            
+        </StackPanel>
+
         <StackPanel Grid.Row="2" Margin="60,20,0,10">
-                <Button Content="To PayTicket" HorizontalAlignment="Left" Height="36" Margin="320,0,0,0" Width="180" Click="PayTicket"/>
+            <Button Content="To PayTicket" HorizontalAlignment="Left" Height="39" Margin="290,0,0,0" Width="210" Click="PayTicket" FontSize="18"/>
             <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
         </StackPanel>
 

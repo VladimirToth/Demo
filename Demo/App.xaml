@@ -19,6 +19,12 @@
             <Setter Property="TextLineBounds" Value="TrimToBaseline"/>
             <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
         </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontFamily" Value=""/>
+            <Setter Property="FontSize" Value="18"
+        </Style>
     </Application.Resources>
 
 </Application>
