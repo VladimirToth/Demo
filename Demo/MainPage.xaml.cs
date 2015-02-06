@@ -200,7 +200,7 @@ namespace Demo
             listView1.Items.Clear();
 
 
-            for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
+            for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; ++i)
             {
                 _Rootobject.stations[i].tempDistance = _Rootobject.stations[i].distance - _Rootobject.stations[Data.selectedIndex1].distance;
             }
@@ -208,7 +208,6 @@ namespace Demo
             for (int i = 0; i <= Data.selectedIndex2 + 1; i++)
             {
                 listView1.Items.Add(_Rootobject.stations[i + Data.selectedIndex1]);
-
             }
 
             //double price = listBox2.Items.
