@@ -88,7 +88,7 @@ namespace Demo
         /// serializable state.</param>
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
-            e.PageState["greetingOutputText"] = greetingOutput.Text;
+            //e.PageState["greetingOutputText"] = greetingOutput.Text;
         }
 
         #region NavigationHelper registration
@@ -197,15 +197,11 @@ namespace Demo
 
             listView1.Items.Clear();
 
-            listView1.Items.Add("Station " + "Arrival " + "Departure " + "Distance");
+            //listView1.Items.Add("Station " + "Arrival " + "Departure " + "Distance");
 
             for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
             {
-                listView1.Items.Add(
-                    _Rootobject.stations[i].name + " " +
-                    _Rootobject.stations[i].arrives + " " +
-                    _Rootobject.stations[i].departs + " " +
-                    _Rootobject.stations[i].distance);
+                listView1.Items.Add(_Rootobject.stations[i]);
 
             }
 

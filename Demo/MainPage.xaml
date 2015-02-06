@@ -80,45 +80,35 @@
                 <Grid Margin="150,0,0,0">
                     
                     <ListView x:Name="listView1">
-
+                        <!--<ListView.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="50"/>
+                            </Grid>
+                        </ListView.Header>-->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>                            
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding name}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding arrives}" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding departs}" Grid.Column="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
-
-
-                    <!--<Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <TextBlock Grid.Column="0" Text="Station" Style="{StaticResource BaseTextBlockStyle}"/>
-                        <TextBlock Grid.Column="1" Text="Arrival" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="2" Text="Departure" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="3" Text="Distance" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="4" Text="Duration" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <TextBlock Grid.Column="0"/>
-                        <TextBlock Grid.Column="1" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="2" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="3" Margin="50,0,0,0"/>
-                        <TextBlock Grid.Column="4" Margin="50,0,0,0"/>
-                    </StackPanel>-->
 
                 </Grid>
             </StackPanel>

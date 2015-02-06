@@ -167,7 +167,7 @@ namespace Demo
                     // Nastav príslušné body
                     oMail.Subject = "Train confirmation: " + number;
 
-                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was" ;
+                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed. " ;
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
 
