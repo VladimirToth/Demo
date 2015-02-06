@@ -9,7 +9,7 @@ namespace Demo
     class Data
     {
         public static int numberOfStations = 0;
-        public static int selectedIndex1 = 0;
-        public static int selectedIndex2 = 0;
+        public static Station selectedStation1 = null;
+        public static Station selectedStation2 = null;
     }
 }

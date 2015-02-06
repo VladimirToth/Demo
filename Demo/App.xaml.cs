@@ -1,8 +1,10 @@
 ﻿using Demo.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
@@ -35,14 +37,26 @@ namespace Demo
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+        public Rootobject RootObject { get; private set; }
 
+
+        private async Task GetDataAsync()
+        {
+
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            RootObject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
         
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 
 #if DEBUG
@@ -53,6 +67,8 @@ namespace Demo
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
+
+            await GetDataAsync();
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active

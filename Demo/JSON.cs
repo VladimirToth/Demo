@@ -9,7 +9,7 @@ namespace Demo
 
     public class Rootobject
     {
-        public Station[] stations { get; set; }
+        public List<Station> stations { get; set; }
     }
 
     public class Station

@@ -30,7 +30,6 @@ namespace Demo
     {
 
         private NavigationHelper navigationHelper;
-        private Rootobject _Rootobject;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
 
@@ -55,14 +54,15 @@ namespace Demo
         public MainPage()
         {
             this.InitializeComponent();
-            this.GetData();
-            this.PopulateListbox1();
+            
+            //this.PopulateListbox1();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             
         }
 
+        
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -77,6 +77,7 @@ namespace Demo
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+          
         }
 
         /// <summary>
@@ -106,6 +107,7 @@ namespace Demo
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
+            PopulateListbox1();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -125,26 +127,17 @@ namespace Demo
         //}
 
 
-        private async void GetData()
-        {
-
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
-            var jsonString = await response.Content.ReadAsStringAsync();
-
-            _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
-            
-            Data.numberOfStations = _Rootobject.stations.Count();
-
-
-        }
-        
         private void PopulateListbox1()
         {
-                        for (int i = 0; i < Data.numberOfStations - 1; i++)
+
+            var rootObject = (App.Current as App).RootObject;
+            Data.numberOfStations = rootObject.stations.Count();
+
+            for (int i = 0; i < Data.numberOfStations - 1; i++)
             {
-                listBox1.Items.Add(_Rootobject.stations[i].name);
+                listBox1.Items.Add(rootObject.stations[i]);
             }
+          
         }
 
         
@@ -182,18 +175,20 @@ namespace Demo
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox lb = (ListBox)sender;
-            Data.selectedIndex1 = lb.SelectedIndex;
-
+            Data.selectedStation1 = lb.SelectedItem as Station;
             //if (selected == null)
             //{
             //    //napisat kod pre pripad, ak je vyber prazdny
             //}
             listBox2.Items.Clear();
-     
-
-            for (int i = Data.selectedIndex1 + 1; i < Data.numberOfStations; i++)
+            if (Data.selectedStation1 != null)
             {
-                listBox2.Items.Add(_Rootobject.stations[i].name);
+                var rootObject = (App.Current as App).RootObject;
+                int index = rootObject.stations.IndexOf(Data.selectedStation1);
+                for (int i = index + 1; i < Data.numberOfStations; i++)
+                {
+                    listBox2.Items.Add(rootObject.stations[i]);
+                }
             }
 
         }
@@ -201,22 +196,23 @@ namespace Demo
         private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox lb = (ListBox)sender;
-            Data.selectedIndex2 = lb.SelectedIndex;
+            Data.selectedStation2 = lb.SelectedItem as Station;
 
             listView1.Items.Clear();
-
-
-            for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; ++i)
+            if (Data.selectedStation2 != null)
             {
-                _Rootobject.stations[i].tempDistance = _Rootobject.stations[i].distance - _Rootobject.stations[Data.selectedIndex1].distance;
-            }
+                var rootObject = (App.Current as App).RootObject;
+                int start = rootObject.stations.IndexOf(Data.selectedStation1);
+                int end = rootObject.stations.IndexOf(Data.selectedStation2);
 
-            for (int i = 0; i <= Data.selectedIndex2 + 1; i++)
-            {
-                listView1.Items.Add(_Rootobject.stations[i + Data.selectedIndex1]);
+                for (int i = start; i <= end; i++)
+                {
+                    rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
+
+                    listView1.Items.Add(rootObject.stations[i]);
+                }
             }
-            
-            PopulateListbox1()
+            //PopulateListbox1();
 
             //double price = listBox2.Items.
         }
