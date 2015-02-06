@@ -6,6 +6,7 @@
         "arrives": "",
         "departs": "11:13",
 	"distance": "0",
+	"restTime": "0",
 	"duration": "0",
 	"latitude": "31.153302000000000000",
         "longitude": "121.429487000000000000"
@@ -16,6 +17,7 @@
         "arrives": "11:55",
         "departs": "11:58",
 	"distance": "80",
+	"restTime": "3",
 	"duration": "42",
 	"latitude": "30.764171",
         "longitude": "120.763596"
@@ -26,6 +28,7 @@
         "arrives": "12:19",
         "departs": "12:22",
 	"distance": "108",
+	"restTime": "3",
 	"duration": "66",
 	"latitude": "30.438321",
         "longitude": "120.39216099999999"
@@ -36,6 +39,7 @@
         "arrives": "13:03",
         "departs": "13:07",
 	"distance": "167",
+	"restTime": "4",
 	"duration": "110",
 	"latitude": "30.29014399999999",
         "longitude": "120.21146799999997"	
@@ -46,6 +50,7 @@
         "arrives": "14:13",
         "departs": "14:16",
 	"distance": "312",
+	"restTime": "3",
 	"duration": "180",
 	"latitude": "29.378774000000000000",
         "longitude": "120.042883000000070000"	
@@ -56,6 +61,7 @@
         "arrives": "14:54",
         "departs": "15:00",
 	"distance": "360",
+	"restTime": "6",
 	"duration": "221",
 	"latitude": "29.110392",
         "longitude": "119.63572699999997"	
@@ -66,6 +72,7 @@
         "arrives": "15:47",
         "departs": "15:50",
 	"distance": "446",
+	"restTime": "3",
 	"duration": "274",
 	"latitude": "31.329093",
         "longitude": "120.61087700000007"	
@@ -76,6 +83,7 @@
         "arrives": "17:05",
         "departs": "17:10",
 	"distance": "557",
+	"restTime": "5",
 	"duration": "352",
 	"latitude": "28.491656",
         "longitude": "118.00639999999999"	
@@ -86,6 +94,7 @@
         "arrives": "18:10",
         "departs": "18:25",
 	"distance": "673",
+	"restTime": "15",
 	"duration": "417",
 	"latitude": "28.234954",
         "longitude": "117.02766199999996"	
@@ -96,6 +105,7 @@
         "arrives": "21:31",
         "departs": "21:37",
 	"distance": "987",
+	"restTime": "6",
 	"duration": "618",
 	"latitude": "27.105406",
         "longitude": "115.02064900000005"	
@@ -106,6 +116,7 @@
         "arrives": "23:29",
         "departs": "00:01",
 	"distance": "1173",
+	"restTime": "32",
 	"duration": "736",
 	"latitude": "30.243487",
         "longitude": "120.18287499999997"	
@@ -116,6 +127,7 @@
         "arrives": "00:46",
         "departs": "00:49",
 	"distance": "1246",
+	"restTime": "3",
 	"duration": "813",
 	"latitude": "31.2617718",
         "longitude": "121.46012429999996"	
@@ -126,6 +138,7 @@
         "arrives": "01:58",
         "departs": "02:02",
 	"distance": "1346",
+	"restTime": "4",
 	"duration": "885",
 	"latitude": "31.3612323",
         "longitude": "121.36190169999998"	
@@ -136,6 +149,7 @@
         "arrives": "02:52",
         "departs": "03:00",
 	"distance": "1377",
+	"restTime": "8",
 	"duration": "939",
 	"latitude": "24.793794",
         "longitude": "113.60561699999994"	
@@ -146,6 +160,7 @@
         "arrives": "05:26",
         "departs": "",
 	"distance": "1598",
+	"restTime": "0",
 	"duration": "1093",
 	"latitude": "23.148835000000000000",
         "longitude": "113.257619999999970000"	
