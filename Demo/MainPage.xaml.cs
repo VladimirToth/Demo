@@ -195,14 +195,17 @@ namespace Demo
             ListBox lb = (ListBox)sender;
             Data.selectedIndex2 = lb.SelectedIndex;
 
-            //listView1.Items.Clear();
+            listView1.Items.Clear();
+
+            listView1.Items.Add("Station " + "Arrival " + "Departure " + "Distance");
 
             for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
             {
-                //listView1.Items.Add(
-                //    _Rootobject.stations[i].name + " " +
-                //    _Rootobject.stations[i].distance + " " + 
-                //    _Rootobject.stations[i].arrives);
+                listView1.Items.Add(
+                    _Rootobject.stations[i].name + " " +
+                    _Rootobject.stations[i].arrives + " " +
+                    _Rootobject.stations[i].departs + " " +
+                    _Rootobject.stations[i].distance);
 
             }
 

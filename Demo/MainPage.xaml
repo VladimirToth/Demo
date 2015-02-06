@@ -78,7 +78,13 @@
                 <ListBox x:Name="listBox1" VerticalAlignment="Top" Height="400" SelectionChanged="listBox1_SelectionChanged" Padding="0,0,15,0" />
                 <ListBox x:Name="listBox2" VerticalAlignment="Top" Height="400" Margin="83,0,0,0" SelectionChanged="listBox2_SelectionChanged" Padding="0,0,15,0"/>
                 <Grid Margin="150,0,0,0">
-                    <Grid.RowDefinitions>
+                    
+                    <ListView x:Name="listView1">
+
+                    </ListView>
+
+
+                    <!--<Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -93,10 +99,10 @@
                     
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -106,10 +112,14 @@
                         <TextBlock Grid.Column="3" Text="Distance" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
                         <TextBlock Grid.Column="4" Text="Duration" Style="{StaticResource BaseTextBlockStyle}" Margin="50,0,0,0"/>
                     </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock Grid.Column="0"/>
+                        <TextBlock Grid.Column="1" Margin="50,0,0,0"/>
+                        <TextBlock Grid.Column="2" Margin="50,0,0,0"/>
+                        <TextBlock Grid.Column="3" Margin="50,0,0,0"/>
+                        <TextBlock Grid.Column="4" Margin="50,0,0,0"/>
+                    </StackPanel>-->
 
-                    <!--<ListView x:Name="listView1">
-                        
-                    </ListView>-->
                 </Grid>
             </StackPanel>
             
