@@ -3,7 +3,7 @@
     {
         "id": "01",
         "name": "Shanghai South",
-        "arrives": "",
+        "arrives": "11:13",
         "departs": "11:13",
 	"distance": "0",
 	"restTime": "0",
@@ -158,7 +158,7 @@
         "id": "15",
         "name": "Guangzhou",
         "arrives": "05:26",
-        "departs": "",
+        "departs": "05:26",
 	"distance": "1598",
 	"restTime": "0",
 	"duration": "1093",
