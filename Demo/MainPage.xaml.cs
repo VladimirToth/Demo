@@ -128,7 +128,7 @@ namespace Demo
         {
 
             var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(new Uri("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json"));
+            HttpResponseMessage response = await client.GetAsync(new Uri("https://github.com/VladimirToth/Demo/blob/master/Demo/stations.json"));
             var jsonString = await response.Content.ReadAsStringAsync();
 
             _Rootobject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
