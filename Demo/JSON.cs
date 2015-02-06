@@ -25,7 +25,7 @@ namespace Demo
         public double longitude { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]
-        public int TempDistance { get; set; }
+        public int tempDistance { get; set; }
     
     }
 

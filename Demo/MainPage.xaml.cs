@@ -183,6 +183,8 @@ namespace Demo
             //    //napisat kod pre pripad, ak je vyber prazdny
             //}
             listBox2.Items.Clear();
+     
+
             for (int i = Data.selectedIndex1 + 1; i < Data.numberOfStations; i++)
             {
                 listBox2.Items.Add(_Rootobject.stations[i].name);
@@ -197,9 +199,15 @@ namespace Demo
 
             listView1.Items.Clear();
 
+
             for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
             {
-                listView1.Items.Add(_Rootobject.stations[i]);
+                _Rootobject.stations[i].tempDistance = _Rootobject.stations[i].distance - _Rootobject.stations[Data.selectedIndex1].distance;
+            }
+
+            for (int i = 0; i <= Data.selectedIndex2 + 1; i++)
+            {
+                listView1.Items.Add(_Rootobject.stations[i + Data.selectedIndex1]);
 
             }
 

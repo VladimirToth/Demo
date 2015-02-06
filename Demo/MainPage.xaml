@@ -89,12 +89,14 @@
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="120"/>
-                                        <ColumnDefinition Width="90"/>
-                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Name" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
                                     <TextBlock Text="Arrival" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
                                     <TextBlock Text="Departure" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Distance" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
                                 </Grid>
                             </DataTemplate>
                         </ListView.HeaderTemplate>
@@ -106,12 +108,14 @@
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="120"/>
-                                        <ColumnDefinition Width="90"/>
-                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding name}" Grid.Column="0"/>
                                     <TextBlock Text="{Binding arrives}" Grid.Column="1"/>
                                     <TextBlock Text="{Binding departs}" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding tempDistance}" Grid.Column="3"/>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
