@@ -19,6 +19,7 @@ namespace Demo
         public string arrives { get; set; }
         public string departs { get; set; }
         public int distance { get; set; }
+        public int restTime { get; set; }
         public int duration { get; set; }
         public double latitude { get; set; }
         public double longitude { get; set; }

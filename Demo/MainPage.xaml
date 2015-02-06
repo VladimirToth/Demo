@@ -125,9 +125,9 @@
             
             </StackPanel>
             
-        <StackPanel Grid.Row="2" Margin="60,20,0,10">
+        <StackPanel Grid.Row="2" Margin="60,20,0,10" Orientation="Vertical">
             <Button Content="To PayTicket" HorizontalAlignment="Left" Height="39" Margin="290,0,0,0" Width="210" Click="PayTicket" FontSize="18"/>
-            <TextBlock x:Name="greetingOutput" Style="{StaticResource BigGreenTextStyle}"/>
+            <TextBlock x:Name="Price" Style="{StaticResource BigGreenTextStyle}"/>
         </StackPanel>
 
     </Grid>

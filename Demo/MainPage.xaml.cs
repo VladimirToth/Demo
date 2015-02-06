@@ -209,6 +209,7 @@ namespace Demo
 
             }
 
+            //double price = listBox2.Items.
         }
     }
 }
