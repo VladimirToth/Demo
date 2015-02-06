@@ -197,8 +197,6 @@ namespace Demo
 
             listView1.Items.Clear();
 
-            //listView1.Items.Add("Station " + "Arrival " + "Departure " + "Distance");
-
             for (int i = Data.selectedIndex1; i <= Data.selectedIndex2 + 1; i++)
             {
                 listView1.Items.Add(_Rootobject.stations[i]);

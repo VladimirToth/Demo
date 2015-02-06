@@ -23,6 +23,9 @@ namespace Demo
         public int duration { get; set; }
         public double latitude { get; set; }
         public double longitude { get; set; }
+
+        [Newtonsoft.Json.JsonIgnore]
+        public int TempDistance { get; set; }
     
     }
 
