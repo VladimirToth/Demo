@@ -56,6 +56,7 @@ namespace Demo
         {
             this.InitializeComponent();
             this.GetData();
+            this.PopulateListbox1();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
@@ -135,7 +136,12 @@ namespace Demo
             
             Data.numberOfStations = _Rootobject.stations.Count();
 
-            for (int i = 0; i < Data.numberOfStations - 1; i++)
+
+        }
+        
+        private void PopulateListbox1()
+        {
+                        for (int i = 0; i < Data.numberOfStations - 1; i++)
             {
                 listBox1.Items.Add(_Rootobject.stations[i].name);
             }
@@ -209,6 +215,8 @@ namespace Demo
             {
                 listView1.Items.Add(_Rootobject.stations[i + Data.selectedIndex1]);
             }
+            
+            PopulateListbox1()
 
             //double price = listBox2.Items.
         }
