@@ -16,6 +16,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Core;
 using Demo.Common;
 using System.Threading.Tasks;
+using System.Threading;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 namespace Demo
 {
@@ -59,9 +60,11 @@ namespace Demo
 
         async void splash_Dismissed(SplashScreen sender, object args)
         {
+            await Task.Delay(1000);
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
- DismissExtendedSplash();
+                
+                DismissExtendedSplash();
             });
               
         }

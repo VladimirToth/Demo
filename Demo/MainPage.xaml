@@ -13,6 +13,7 @@
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Time Table</x:String>
+        
     </Page.Resources>
     
     <Page.TopAppBar>
@@ -40,7 +41,8 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">-->
+    <Grid Background="Red">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
@@ -63,48 +65,48 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock  x:Name="pageTitle"  Foreground="Gold" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
 
         <StackPanel Grid.Row="1" Margin="60,20,0,10">
             
             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
-                <TextBlock Text="Departure Station" Style="{StaticResource TextBlockStyle}"/>
-                <TextBlock Text="Arrival Station" Style="{StaticResource TextBlockStyle}" Margin="100,0,0,0"/>
-                <TextBlock Text="Time schedule" Style="{StaticResource TextBlockStyle}" Margin="150,0,0,0"/>
+                <TextBlock Text="Departure Station"  Foreground="Yellow" Style="{StaticResource TextBlockStyle}"/>
+                <TextBlock Text="Arrival Station"  Foreground="Yellow" Style="{StaticResource TextBlockStyle}" Margin="100,0,0,0"/>
+                <TextBlock Text="Time schedule"  Foreground="Yellow" Style="{StaticResource TextBlockStyle}" Margin="150,0,0,0"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
                 
-                <ListBox x:Name="listBox1" VerticalAlignment="Top" Height="400" SelectionChanged="listBox1_SelectionChanged" Padding="0,0,15,0">
+                <ListBox x:Name="listBox1"  Background="Gold" VerticalAlignment="Top" Height="400" SelectionChanged="listBox1_SelectionChanged" Padding="0,0,15,0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding name}" Grid.Column="0"/>
+                                <TextBlock  Foreground="DarkRed" Text="{Binding name}" Grid.Column="0"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <ListBox x:Name="listBox2" VerticalAlignment="Top" Height="400" Margin="83,0,0,0" SelectionChanged="listBox2_SelectionChanged" Padding="0,0,15,0">
+                <ListBox x:Name="listBox2"  Background="Gold" VerticalAlignment="Top" Height="400" Margin="83,0,0,0" SelectionChanged="listBox2_SelectionChanged" Padding="0,0,15,0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding name}" Grid.Column="0"/>
+                                <TextBlock  Foreground="DarkRed" Text="{Binding name}" Grid.Column="0"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 
                 <Grid Margin="150,0,0,0">
-                    <ListView x:Name="listView1" Height="400">
+                    <ListView  Background="Gold" x:Name="listView1" Height="400">
                         <ListView.HeaderTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -117,10 +119,10 @@
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Name" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
-                                    <TextBlock Text="Arrival" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
-                                    <TextBlock Text="Departure" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
-                                    <TextBlock Text="Distance" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Name" Foreground="DarkRed" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Arrival"  Foreground="DarkRed" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Departure"  Foreground="DarkRed" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Distance" Foreground="DarkRed" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
                                 </Grid>
                             </DataTemplate>
                         </ListView.HeaderTemplate>
@@ -136,7 +138,7 @@
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="{Binding name}" Grid.Column="0"/>
+                                    <TextBlock Foreground="Red" Text="{Binding name}" Grid.Column="0"/>
                                     <TextBlock Text="{Binding arrives}" Grid.Column="1"/>
                                     <TextBlock Text="{Binding departs}" Grid.Column="2"/>
                                     <TextBlock Text="{Binding tempDistance}" Grid.Column="3"/>
@@ -151,9 +153,10 @@
             </StackPanel>
             
         <StackPanel Grid.Row="2" Margin="60,20,0,10" Orientation="Vertical">
-            <Button Content="To PayTicket" HorizontalAlignment="Left" Height="39" Margin="290,0,0,0" Width="210" Click="PayTicket" FontSize="18"/>
+            <Button  Background="Silver" Foreground="DarkRed" Content="To PayTicket" HorizontalAlignment="Left" Height="39" Margin="290,0,0,0" Width="210" Click="PayTicket" FontSize="18"/>
             <TextBlock x:Name="Price" Style="{StaticResource BigGreenTextStyle}"/>
         </StackPanel>
 
     </Grid>
+    
 </Page>
