@@ -115,15 +115,6 @@ namespace Demo
         #endregion
 
 
-        //private async Task<string> Method()
-        //{
-        //    HttpClient client = new HttpClient();
-        //    string json = await client.GetStringAsync("https://raw.githubusercontent.com/VladimirToth/Demo/master/Demo/stations.json");
-
-        //    return json;
-        //}
-
-
         private void PopulateListbox1()
         {
 
@@ -136,12 +127,14 @@ namespace Demo
             }
           
         }
-
-        
+ 
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PayTicket));
+            if (Data.selectedStation2!=null)
+            {
+                this.Frame.Navigate(typeof(PayTicket));
+            }
 
         }
 
@@ -152,7 +145,10 @@ namespace Demo
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PayTicket));
+            if (Data.selectedStation2 != null)
+            {
+                this.Frame.Navigate(typeof(PayTicket));
+            }
         }
 
 
@@ -197,18 +193,19 @@ namespace Demo
                 int start = rootObject.stations.IndexOf(Data.selectedStation1);
                 int end = rootObject.stations.IndexOf(Data.selectedStation2);
 
+                //listView1.Items.Add(rootObject.stations[start]);
+
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
-                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration);
+                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration - Data.selectedStation2.restTime);
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
 
 
+
             }
-
         }
-
     }
 }
