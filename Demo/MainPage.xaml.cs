@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-//using System.Net;
 using Newtonsoft.Json;
 using Windows.Web.Http;
 using System.Threading.Tasks;
@@ -61,8 +60,6 @@ namespace Demo
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             
         }
-
-        
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -208,13 +205,13 @@ namespace Demo
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
+                    rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
             }
-            //PopulateListbox1();
 
-            //double price = listBox2.Items.
         }
+
     }
 }
