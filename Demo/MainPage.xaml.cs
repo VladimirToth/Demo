@@ -145,11 +145,6 @@ namespace Demo
 
         }
 
-        private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
@@ -157,7 +152,7 @@ namespace Demo
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(PayTicket));
         }
 
 
@@ -205,10 +200,12 @@ namespace Demo
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
-                    rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
+                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration);
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
+
+
             }
 
         }
