@@ -124,13 +124,36 @@ namespace Demo
 
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBox comBoxSeats = new ComboBox();
-            comBoxSeats.Width = 200;
-            comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
+            //ComboBox comBoxSeats = new ComboBox();
+            //comBoxSeats.Width = 200;
+            //comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
+            ComboBox cb = (ComboBox)sender;
+            string item = cb.SelectedItem as string;
+
+            switch (item)
+            {
+                case "1 seat":
+                    txtTotalPrice.Text = (Data.price * 1).ToString() + " YUANS";
+                    break;
+                case "2 seats":
+                    txtTotalPrice.Text = (Data.price * 2).ToString() + " YUANS";
+                    break;
+                case "3 seats":
+                    txtTotalPrice.Text = (Data.price * 3).ToString() + " YUANS";
+                    break;
+                case "4 seats":
+                    txtTotalPrice.Text = (Data.price * 4).ToString() + " YUANS";
+                    break;
+                case "5 seats":
+                    txtTotalPrice.Text = (Data.price * 5).ToString() + " YUANS";
+                    break;
+                default:
+                    txtTotalPrice.Text = "Please, choose seats";
+                    break;
+            }
        
         }
 
-        
 
         private async void btnSenda_Click(object sender, RoutedEventArgs e)
         {
@@ -167,7 +190,9 @@ namespace Demo
                     // Nastav príslušné body
                     oMail.Subject = "Train confirmation: " + number;
 
-                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed. " ;
+                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed." + 
+                        //"Departure Station: " 
+                       " Please, save your confirmation number: " + number;
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
 
@@ -178,7 +203,7 @@ namespace Demo
                     oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
 
                     await oSmtp.SendMailAsync(oServer, oMail);
-                    Result = "Email was sent successfully!" + Environment.NewLine + "Thank You for using our services!";
+                    Result = "Thank You!" + Environment.NewLine + "Your order has been successfully completed. You should receive a confirmation email shortly!";
                 }
                 catch
                 {

@@ -8,10 +8,10 @@
     <Application.Resources>
         
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="Gold"/>
+            <Setter Property="Foreground" Value="DarkRed"/>
             <Setter Property="Background" Value="Red"/>
-            <Setter Property="FontFamily" Value="BatangChe"/>
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="Width" Value="150"/>
         </Style>
         

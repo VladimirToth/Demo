@@ -205,8 +205,8 @@ namespace Demo
 
         private void priceCalculation(int distance)
         {
-            double p = distance * 5;
-            price.Text = p.ToString() + " YUANS";
+            Data.price = distance * 5;
+            price.Text = Data.price.ToString() + " YUANS";
         }
     }
 }

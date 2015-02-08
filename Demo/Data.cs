@@ -9,6 +9,7 @@ namespace Demo
     class Data
     {
         public static int numberOfStations { get; set; }
+        public static double price { get; set; }
         public static Station selectedStation1 { get; set; }
         public static Station selectedStation2 { get; set; }
     }
