@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
@@ -77,6 +78,12 @@ namespace Demo
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
+                // Her we set the application background Image for all pages
+                //rootFrame.Background = new ImageBrush
+                //{
+                //    Stretch = Windows.UI.Xaml.Media.Stretch.UniformToFill,
+                //    ImageSource = new BitmapImage { UriSource = new Uri("ms-appx:/Assets/Background.jpg") }
+                //};
                 //Registrujem instanciu rootFrame, do ktorej sa budu ukladat udaje o stave aplikacie. Klucom je
                 // string appFrame, prostrednictvom ktoreho volam zaregistrovany stav
                 SuspensionManager.RegisterFrame(rootFrame, "appFrame");
