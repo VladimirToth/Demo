@@ -26,7 +26,7 @@ namespace Demo
 
         [Newtonsoft.Json.JsonIgnore]
         public int tempDistance { get; set; }
-        public int tempDuration { get; set; }
+        public TimeSpan tempDuration { get; set; }
     
     }
 

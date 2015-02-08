@@ -205,7 +205,7 @@ namespace Demo
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
-                    rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
+                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration);
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
