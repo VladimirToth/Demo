@@ -63,7 +63,7 @@
         <Style TargetType="Grid" x:Key="gridBackground">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="/Assets/Background.jpg" Stretch="UniformToFill"></ImageBrush>
+                    <ImageBrush ImageSource="/Assets/Background.jpg" Stretch="UniformToFill" Opacity="0.5"></ImageBrush>
                 </Setter.Value>
             </Setter>
         </Style>
@@ -72,7 +72,7 @@
         <Style TargetType="Grid" x:Key="toPayTicketBack">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="/Assets/Background2.jpg" Stretch="UniformToFill"></ImageBrush>
+                    <ImageBrush ImageSource="/Assets/Background2.jpg" Stretch="UniformToFill" Opacity="0.5"></ImageBrush>
                 </Setter.Value>
             </Setter>
         </Style>
