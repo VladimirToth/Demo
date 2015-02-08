@@ -33,15 +33,15 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock  x:Name="pageTitle" Foreground="Gold" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock  x:Name="pageTitle" Foreground="Red" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" Padding="10"/>
         </Grid>
 
@@ -128,15 +128,18 @@
                 </Grid>
                 
                 <StackPanel Margin="80,0,0,0" Orientation="Vertical">
-                    <TextBox Text="Total Price" Style="{StaticResource TextBoxStyle}"/>
-                    <TextBlock x:Name="price" Style="{StaticResource TextBlockStyle}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Price" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBox x:Name="price" Margin="30,0,0,0" Style="{StaticResource TextBoxStyle}"/> 
+                    </StackPanel>
+                    <Button Background="Silver" Content="PayTicket" VerticalAlignment="Bottom" Margin="0,400,0,0" Height="39" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
                 </StackPanel>
                 
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Top" Margin="20,0,0,10">
-            <Button Background="Silver" Content="PayTicket" HorizontalAlignment="Stretch" Height="39" Margin="0,0,200,0" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
+         
         </StackPanel>
 
     </Grid>

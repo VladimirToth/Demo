@@ -53,8 +53,6 @@ namespace Demo
         public MainPage()
         {
             this.InitializeComponent();
-            
-            //this.PopulateListbox1();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
@@ -193,12 +191,10 @@ namespace Demo
                 int start = rootObject.stations.IndexOf(Data.selectedStation1);
                 int end = rootObject.stations.IndexOf(Data.selectedStation2);
 
-                //listView1.Items.Add(rootObject.stations[start]);
-
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
-                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration - Data.selectedStation2.restTime);
+                    rootObject.stations[i].tempDuration = TimeSpan.FromMinutes(rootObject.stations[i].duration - Data.selectedStation1.duration);
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
@@ -210,7 +206,7 @@ namespace Demo
         private void priceCalculation(int distance)
         {
             double p = distance * 5;
-            price.Text = p.ToString() + " JUAN";
+            price.Text = p.ToString() + " YUANS";
         }
     }
 }
