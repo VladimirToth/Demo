@@ -54,15 +54,15 @@ namespace Demo
         public MainPage()
         {
             this.InitializeComponent();
-            
+
             //this.PopulateListbox1();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            
+
         }
 
-        
+
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -77,7 +77,7 @@ namespace Demo
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-          
+
         }
 
         /// <summary>
@@ -137,10 +137,10 @@ namespace Demo
             {
                 listBox1.Items.Add(rootObject.stations[i]);
             }
-          
+
         }
 
-        
+
 
         private void PayTicket(object sender, RoutedEventArgs e)
         {
@@ -208,13 +208,99 @@ namespace Demo
                 for (int i = start; i <= end; i++)
                 {
                     rootObject.stations[i].tempDistance = rootObject.stations[i].distance - Data.selectedStation1.distance;
+                    rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
+                ////try
+                ////{
+               // for (int i = start; i <= end; i++)
+              //  {
+                 //   rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
+
+//var dur = DepartureConverterHours(rootObject.stations[i].tempDuration);
+
+//listView1.Items.Add(dur);
+                //
+
+              //  for (int i = start; i <= end; i++)
+               // {
+                  //  rootObject.stations[i].tempDuration = rootObject.stations[i].duration - Data.selectedStation1.duration;
+
+                  //  var dur2 = DepartureConverterMinutes(rootObject.stations[i].tempDuration);
+
+                 //   listView1.Items.Add(dur2);
+             //   }
+                //}catch(Exception ex)
+                //{
+                //    Windows.UI.Popups.MessageDialog message = new Windows.UI.Popups.MessageDialog(ex.StackTrace);
+                //}
             }
             //PopulateListbox1();
 
             //double price = listBox2.Items.
+
         }
+
+
+    //    private string DepartureConverterHours(int input)
+     //   {
+            // String startTime = "00";
+         //   double minutes = input;
+        //    int h = (int) (Math.Round((minutes/60), 2, MidpointRounding.ToEven));
+           // double m = Math.Round((minutes % 60), 2, MidpointRounding.ToEven);
+          //  double hours = Math.Round(h, 2, MidpointRounding.ToEven);
+           // string s1 = String.Format("{0:F2}", h);
+          //  int index = s1.IndexOf(".");
+            //double ho = Math.
+            
+         //   string time = TimeSpan.FromHours(h).ToString();
+            
+          //  string hour = h.ToString().Substring(0, 2);
+          //  string s1 = String.Format("{0}:00", hour);
+          //  int hr = Int32.Parse(s1);
+
+            //  String newDateStr = postFormater.format(dateObj);  
+
+            //  string m = String.Format("%02s", ((long)(minutes % 60)).ToString().Substring(3, 3)); //+ Int32.Parse(startTime.Substring(3, 4)));
+            // String newtime = String.Format("%02d:%02d", h, m);
+            //  String newtime = h + ":" + m;
+
+
+          //  return time;
+              
+
+            //String startTime = "00:00";
+            //long minutes = duration;
+            //int h =(int)(minutes / 60 + Int32.Parse(startTime.Substring(0, 1)));
+            //int m = (int)(minutes % 60 + Int32.Parse(startTime.Substring(3, 4)));
+            //String newtime = String.Format("%02d:%02d", h, m);
+            //return newtime;
+      //  }
+
+     //   private int DepartureConverterMinutes(int input)
+       // {
+           // int minutes = input;
+          //  double m = minutes % 60; //+ Int32.Parse(startTime.Substring(0, 1)));
+           // double min = Math.Round(m, 2);
+          //  string minute = (min.ToString()+"00").Substring(0,2); 
+
+          //  int mn = Int32.Parse(minute);
+            // double m = minutes % 60; //+ Int32.Parse(startTime.Substring(3, 4)));
+            // String newtime = String.Format("%02d:%02d", h, m);
+            //  String newtime = h + ":" + m;
+
+         //   return mn;
+
+       // }
+
+
+
+
+
     }
 }
+        
+    
+
+

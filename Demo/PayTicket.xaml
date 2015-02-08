@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
-            <Button x:Name="backButton"  Background="Gold" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+            <Button x:Name="backButton" Background="Gold" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
@@ -52,7 +52,7 @@
             <x:String>4 seats</x:String>
             <x:String>5 seats</x:String>
         </ComboBox>
-        <TextBox PlaceholderText="Type your e-mail address here" Background="Gold" Foreground="DarkRed" x:Name="txtBoxEmail" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="45" Margin="298,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="24" Grid.Row="1" Grid.Column="1"/>
+        <TextBox PlaceholderText="Type your e-mail address here" Background="Gold"  Foreground="DarkRed" x:Name="txtBoxEmail" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="45" Margin="298,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" FontSize="24" Grid.Row="1" Grid.Column="1"/>
         <Button Background="Silver" Foreground="DarkRed" Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" Height="39" Margin="570,240,0,0" VerticalAlignment="Top" Width="210" Grid.Row="1" Click="btnSenda_Click" FontSize="18"/>
     </Grid>
 </Page>

@@ -23,9 +23,18 @@ namespace Demo
         public int duration { get; set; }
         public double latitude { get; set; }
         public double longitude { get; set; }
+      //  public int tempDuration { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]
         public int tempDistance { get; set; }
+        public int tempDuration { get; set; }
+
+      //  [Newtonsoft.Json.JsonIgnore]
+      /// <summary>
+      
+      /// </summary>
+ // public int dur { get; set; }
+     //   public int dur2 { get; set; }
     
     }
 

@@ -178,7 +178,7 @@ namespace Demo
                     oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
 
                     await oSmtp.SendMailAsync(oServer, oMail);
-                    Result = "Email was sent successfully!";
+                    Result = "Email was sent successfully!" + Environment.NewLine + "Thank You for using our services!";
                 }
                 catch
                 {

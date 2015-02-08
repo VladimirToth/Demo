@@ -130,6 +130,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="DateTimeJson.cs" />
     <Compile Include="JSON.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -156,6 +157,7 @@
     <Content Include="Assets\SplashScreen.scale-100.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-140.jpg" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
     <Content Include="Assets\SplashScreen.scale-180.jpg" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
   </ItemGroup>
