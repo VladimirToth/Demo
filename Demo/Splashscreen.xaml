@@ -9,14 +9,14 @@
 
     <Grid Background="Red">
         <Canvas>
-            <Image x:Name="splashImage" Source="Assets/SplashScreen.jpg" Canvas.Top="10" RenderTransformOrigin="0.484,0.493"/>
+            <Image x:Name="splashImage" Source="Assets/SplashScreen.png" Canvas.Top="10" RenderTransformOrigin="0.484,0.493"/>
             <ProgressRing Width="20" Foreground="Yellow" Name="splashProgressRing" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
             <ProgressRing Width="40" Height="40" Foreground="DarkRed" Name="splashProgressRing1" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
             <ProgressRing Width="60" Height="35" Foreground="Gold" Name="splashProgressRing2" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
             <ProgressRing Width="80" Height="45" Foreground="Silver" Name="splashProgressRing3" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Polygon Stroke="Gold" Fill="Yellow" StrokeThickness="1.0" Points="144 48, 200 222, 53 114, 235 114, 88 222"/>
-        </Canvas>
+        <!--<Canvas HorizontalAlignment="Left" VerticalAlignment="Top">-->
+            <!--<Polygon Stroke="Gold" Fill="Yellow" StrokeThickness="1.0" Points="144 48, 200 222, 53 114, 235 114, 88 222"/>-->
+        <!--</Canvas>-->
     </Grid>
 </Page>
