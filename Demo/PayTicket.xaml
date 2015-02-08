@@ -16,7 +16,7 @@
     </Page.Resources>
 
     <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">-->
-    <Grid Background="Red">
+    <Grid Style="{StaticResource toPayTicketBack}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
