@@ -204,8 +204,15 @@ namespace Demo
                 }
 
 
+                //price.Text = (rootObject.stations[end].tempDistance * 5).ToString();
 
             }
+                       
+        }
+
+        private void priceCalculation()
+        {
+
         }
     }
 }
