@@ -203,16 +203,14 @@ namespace Demo
                     listView1.Items.Add(rootObject.stations[i]);
                 }
 
-
-                //price.Text = (rootObject.stations[end].tempDistance * 5).ToString();
-
-            }
-                       
+                priceCalculation(rootObject.stations[end].tempDistance);
+            }            
         }
 
-        private void priceCalculation()
+        private void priceCalculation(int distance)
         {
-
+            double p = distance * 5;
+            price.Text = p.ToString() + " JUAN";
         }
     }
 }
