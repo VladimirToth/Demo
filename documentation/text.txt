@@ -1,1 +1,10 @@
-documentation goes here
+0. Uvodny certifikat
+1. Zadanie
+2. Use Case Diagram
+3. Data model
+4. Screenshots
+5. Source Code
+6.
+7.
+8.
+9.

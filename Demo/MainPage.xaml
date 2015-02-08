@@ -12,8 +12,8 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">Train T-169</x:String>
-        
+        <x:String x:Key="AppName">Train T 169</x:String>
+
     </Page.Resources>
     
     <Page.TopAppBar>
@@ -56,17 +56,10 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock  x:Name="pageTitle"  Foreground="Gold" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40" />
         </Grid>
 
         <StackPanel Grid.Row="1" Margin="60,20,0,10">
@@ -106,7 +99,7 @@
                 </ListBox>
                 
                 <Grid Margin="150,0,0,0">
-                    <ListView Background="Gold" x:Name="listView1" Height="400" Padding="5">
+                    <ListView  Background="Gold" x:Name="listView1" Height="400" Padding="5">
                         <ListView.HeaderTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -121,8 +114,8 @@
                                         <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Name" Foreground="DarkRed" Grid.Column="0" Style="{StaticResource TextBlockStyle}"/>
-                                    <TextBlock Text="Arrival" Foreground="DarkRed" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
-                                    <TextBlock Text="Departure" Foreground="DarkRed" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Arrival"  Foreground="DarkRed" Grid.Column="1" Style="{StaticResource TextBlockStyle}"/>
+                                    <TextBlock Text="Departure"  Foreground="DarkRed" Grid.Column="2" Style="{StaticResource TextBlockStyle}"/>
                                     <TextBlock Text="Distance" Foreground="DarkRed" Grid.Column="3" Style="{StaticResource TextBlockStyle}"/>
                                     <TextBlock Text="Duration" Foreground="DarkRed" Grid.Column="4" Style="{StaticResource TextBlockStyle}"/>
                                 </Grid>
@@ -140,16 +133,12 @@
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
-                                        <!--<ColumnDefinition Width="20"/>-->
-                                        <!--<ColumnDefinition Width="10"/>-->
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Foreground="Red" Text="{Binding name}" Grid.Column="0"/>
                                     <TextBlock Text="{Binding arrives}" Grid.Column="1"/>
                                     <TextBlock Text="{Binding departs}" Grid.Column="2"/>
                                     <TextBlock Text="{Binding tempDistance}" Grid.Column="3"/>
                                     <TextBlock Text="{Binding tempDuration}" Grid.Column="4"/>
-                                    <!--<TextBlock Text=":" Grid.Column="5"/>-->
-                                    <!--<TextBlock Text="{Binding dur2}" Grid.Column="6"/>-->
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
