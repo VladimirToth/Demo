@@ -145,11 +145,6 @@ namespace Demo
 
         }
 
-        private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
@@ -157,7 +152,7 @@ namespace Demo
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(PayTicket));
         }
 
 
@@ -209,6 +204,8 @@ namespace Demo
 
                     listView1.Items.Add(rootObject.stations[i]);
                 }
+
+
             }
 
         }
