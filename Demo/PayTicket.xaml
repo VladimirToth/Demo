@@ -57,16 +57,17 @@
 
             <TextBlock x:Name="txtblockNumOfSeats" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Number of Seats:" Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
             <TextBlock x:Name="txtblockEmail" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Email adress:" Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
-            <ComboBox Foreground="DarkRed" Background="Gold" x:Name="combBoxSeats" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="53"  Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged" FontSize="24" Grid.Row="0" Grid.Column="1">
+            <ComboBox x:Name="combBoxSeats" Foreground="DarkRed"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="53"  Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged" FontSize="24" Grid.Row="0" Grid.Column="1">
                 <x:String>1 seat</x:String>
                 <x:String>2 seats</x:String>
                 <x:String>3 seats</x:String>
                 <x:String>4 seats</x:String>
                 <x:String>5 seats</x:String>
             </ComboBox> 
-            <TextBox x:Name="txtBoxEmail" PlaceholderText="Type your e-mail address here" HorizontalAlignment="Left" Margin="50,0,0,0"  Height="45"  TextWrapping="Wrap"  Background="Gold" Foreground="DarkRed" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" Width="362" FontSize="24" Grid.Row="1" Grid.Column="1"/>
+            <TextBox x:Name="txtBoxEmail" PlaceholderText="Type your e-mail address here" HorizontalAlignment="Left" Margin="50,0,0,0"  Height="45"  TextWrapping="Wrap"  Foreground="DarkRed" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" Width="362" FontSize="24" Grid.Row="1" Grid.Column="1"/>
+            <Button Background="Silver" Foreground="DarkRed" Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="39"  Width="210" Grid.Row="3" Grid.Column="1" Click="btnSenda_Click" FontSize="18"/>
         </Grid> 
        
-        <Button Background="Silver" Foreground="DarkRed" Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" Height="39" Margin="230,367,0,0" VerticalAlignment="Top" Width="210" Grid.Row="1" Click="btnSenda_Click" FontSize="18"/>
+
     </Grid>
 </Page>

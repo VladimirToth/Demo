@@ -132,7 +132,7 @@
                         <TextBlock Text="Price" Style="{StaticResource TextBlockStyle}"/>
                         <TextBox x:Name="price" Margin="30,0,0,0" Style="{StaticResource TextBoxStyle}"/> 
                     </StackPanel>
-                    <Button Background="Silver" Content="PayTicket" VerticalAlignment="Bottom" Margin="0,400,0,0" Height="39" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
+                    <Button Background="Silver" Content="PayTicket" VerticalAlignment="Bottom" Margin="0,300,0,0" Height="39" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
                 </StackPanel>
                 
             </StackPanel>
