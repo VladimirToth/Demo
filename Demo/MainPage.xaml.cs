@@ -122,8 +122,7 @@ namespace Demo
             for (int i = 0; i < Data.numberOfStations - 1; i++)
             {
                 listBox1.Items.Add(rootObject.stations[i]);
-            }
-          
+            }  
         }
  
 
@@ -152,20 +151,14 @@ namespace Demo
 
         private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //Ukladam data zapisane do TextBoxu, takze v pripade prerusenia aplikacie sa tieto data nestratia
-            //, ale naopak budu pristupne aj pre dalsie zariadenia, kedze sa ulozia do cloudu
             ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
-            //roamingSettings.Values["userName"] = nameInput.Text;
         }
 
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox lb = (ListBox)sender;
             Data.selectedStation1 = lb.SelectedItem as Station;
-            //if (selected == null)
-            //{
-            //    //napisat kod pre pripad, ak je vyber prazdny
-            //}
+
             listBox2.Items.Clear();
             if (Data.selectedStation1 != null)
             {
@@ -176,7 +169,6 @@ namespace Demo
                     listBox2.Items.Add(rootObject.stations[i]);
                 }
             }
-
         }
 
         private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)

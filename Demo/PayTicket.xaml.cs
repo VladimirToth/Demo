@@ -57,9 +57,7 @@ namespace Demo
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
-            this.navigationHelper.SaveState += navigationHelper_SaveState;
-
-            
+            this.navigationHelper.SaveState += navigationHelper_SaveState; 
         }
 
 
@@ -124,9 +122,6 @@ namespace Demo
 
         private void combBoxSeats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //ComboBox comBoxSeats = new ComboBox();
-            //comBoxSeats.Width = 200;
-            //comBoxSeats.SelectionChanged += combBoxSeats_SelectionChanged;
             ComboBox cb = (ComboBox)sender;
             string item = cb.SelectedItem as string;
 
@@ -151,7 +146,6 @@ namespace Demo
                     txtTotalPrice.Text = "Please, choose seats";
                     break;
             }
-       
         }
 
 
@@ -160,7 +154,6 @@ namespace Demo
             btnSend.IsEnabled = false;
             await Send_Email();
             btnSend.IsEnabled = true;
-
         }
 
         private async Task Send_Email()
@@ -173,7 +166,7 @@ namespace Demo
             {
 
                 Random rd = new Random();
-                int number = rd.Next(1, 999999);
+                int number = rd.Next(100000, 999999);
 
                 try
                 {
@@ -182,21 +175,18 @@ namespace Demo
                     SmtpMail oMail = new SmtpMail("TryIt");
                     SmtpClient oSmtp = new SmtpClient();
 
-                    // Adresa našej emailky
                     oMail.From = new MailAddress("trainscheduleconfirmation@gmail.com");
 
                     oMail.To.Add(new MailAddress(email));
 
-                    // Nastav príslušné body
                     oMail.Subject = "Train confirmation: " + number;
 
-                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed." + 
-                        //"Departure Station: " 
+                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed." + Environment.NewLine + 
+
                        " Please, save your confirmation number: " + number;
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
-
-                    // Loginy do našej emailky           
+          
                     oServer.User = "trainscheduleconfirmation@gmail.com";
                     oServer.Password = "abc123456789def";
 
@@ -208,7 +198,6 @@ namespace Demo
                 catch
                 {
                     Result = String.Format("Please, write your email.");
-
                 }
 
                 Windows.UI.Popups.MessageDialog dlg = new
@@ -216,6 +205,11 @@ namespace Demo
 
                 await dlg.ShowAsync();
             }
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }
