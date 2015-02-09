@@ -56,7 +56,6 @@
         </Style>
 
         <Style x:Key="LiestViewItemStyle" TargetType="ListViewItem">
-            <!--<Setter Property="Background" Value="Gold"/>-->
             <Setter Property="FontSize" Value="15"/>
         </Style>
 

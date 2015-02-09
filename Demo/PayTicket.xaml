@@ -14,8 +14,15 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">PayTicket</x:String>
     </Page.Resources>
-
-    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">-->
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Back" Label="Back" Click="AppBarButton_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
     <Grid Style="{StaticResource toPayTicketBack}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
