@@ -148,9 +148,14 @@ namespace Demo
             }
         }
 
-
         private async void btnSenda_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                txtName.Focus(FocusState.Programmatic);
+                return;
+            }
+
             btnSend.IsEnabled = false;
             await Send_Email();
             btnSend.IsEnabled = true;
@@ -160,18 +165,17 @@ namespace Demo
         {
             String Result = "";
             string email = txtBoxEmail.Text;
+            string name = txtName.Text;
             string seats = combBoxSeats.SelectedItem as string;
 
             if (seats != null)
             {
-
+                
                 Random rd = new Random();
                 int number = rd.Next(100000, 999999);
 
                 try
                 {
-
-
                     SmtpMail oMail = new SmtpMail("TryIt");
                     SmtpClient oSmtp = new SmtpClient();
 
@@ -181,9 +185,8 @@ namespace Demo
 
                     oMail.Subject = "Train confirmation: " + number;
 
-                    oMail.TextBody = "Dear customer," + Environment.NewLine + "your order was confirmed." + Environment.NewLine + 
-
-                       " Please, save your confirmation number: " + number;
+                    oMail.TextBody = "Dear " + name + "," + Environment.NewLine + "your order was confirmed." + Environment.NewLine +
+                        Environment.NewLine + "Please, save your confirmation number: " + number;
 
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
           

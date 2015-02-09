@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">PayTicket</x:String>
+        <x:String x:Key="AppName">Back to Timetable</x:String>
     </Page.Resources>
     
     <Page.BottomAppBar>
@@ -56,6 +56,7 @@
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -64,18 +65,21 @@
 
             <TextBlock VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Number of Seats:" Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
             <TextBlock x:Name="txtblockTotalPrice" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Total Price:" Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
-            <TextBlock x:Name="txtblockEmail" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Email adress:" Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
+            <TextBlock x:Name="txtblockName" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Name:" Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
+            <TextBlock x:Name="txtblockEmail" VerticalAlignment="Center" Margin="30,0,0,0" TextWrapping="Wrap" Text="Email adress:" Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBlockStyle}" />
             
-            <ComboBox x:Name="combBoxSeats" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="53" Width="130" RenderTransformOrigin="0.123,0.667" SelectionChanged="combBoxSeats_SelectionChanged" FontSize="24" Grid.Row="0" Grid.Column="1">
+            <ComboBox x:Name="combBoxSeats" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="53" Width="130" SelectionChanged="combBoxSeats_SelectionChanged" FontSize="24" Grid.Row="0" Grid.Column="1">
                 <x:String>1 seat</x:String>
                 <x:String>2 seats</x:String>
                 <x:String>3 seats</x:String>
                 <x:String>4 seats</x:String>
                 <x:String>5 seats</x:String>
-            </ComboBox> 
-            <TextBox x:Name="txtBoxEmail" PlaceholderText="Type your e-mail address here" HorizontalAlignment="Left" Margin="50,0,0,0"  Height="45"  TextWrapping="Wrap"  Foreground="DarkRed" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" Width="362" FontSize="24" Grid.Row="2" Grid.Column="1"/>
-            <Button Background="Silver" Foreground="DarkRed" Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="39"  Width="210" Grid.Row="3" Grid.Column="1" Click="btnSenda_Click" Style="{StaticResource ButtonStyle}"/>
-            <TextBox x:Name="txtTotalPrice" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle}"/>
+            </ComboBox>
+            <TextBox x:Name="txtTotalPrice" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1" FontSize="24" Style="{StaticResource TextBoxStyle}"/>
+            <TextBox x:Name="txtName" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="1" FontSize="24" Style="{StaticResource TextBoxStyle}"/>
+            <TextBox x:Name="txtBoxEmail" PlaceholderText="Type your e-mail address here" HorizontalAlignment="Left" Margin="50,0,0,0"  Height="45"  TextWrapping="Wrap"  Foreground="DarkRed" Text="{Binding Path=txtBoxEmail, UpdateSourceTrigger=Explicit}" Width="362" FontSize="24" Grid.Row="3" Grid.Column="1"/>
+            <Button Background="Silver" Foreground="DarkRed" Content="Confirm Order" Name="btnSend"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" Height="39"  Width="210" Grid.Row="4" Grid.Column="1" Click="btnSenda_Click" Style="{StaticResource ButtonStyle}"/>
+            
         </Grid> 
        
 

@@ -29,7 +29,6 @@
         </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -124,10 +123,10 @@
                 
                 <StackPanel Margin="80,0,0,0" Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Price" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBlock x:Name="blockPrice" Text="Price" Style="{StaticResource TextBlockStyle}"/>
                         <TextBox x:Name="price" Margin="30,0,0,0" Style="{StaticResource TextBoxStyle}"/> 
                     </StackPanel>
-                    <Button Background="Silver" Content="PayTicket" VerticalAlignment="Bottom" Margin="0,250,0,0" Height="39" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="button1" Background="Silver" Content="PayTicket" VerticalAlignment="Bottom" Margin="0,250,0,0" Height="39" Click="PayTicket" Style="{StaticResource ButtonStyle}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

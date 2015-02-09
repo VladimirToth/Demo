@@ -103,6 +103,11 @@ namespace Demo
         {
             navigationHelper.OnNavigatedTo(e);
             PopulateListbox1();
+            listBox2.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            listView1.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            price.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            blockPrice.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            button1.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -148,7 +153,7 @@ namespace Demo
             }
         }
 
-
+        
         private void nameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             ApplicationDataContainer roamingSettings = ApplicationData.Current.RoamingSettings;
@@ -156,10 +161,14 @@ namespace Demo
 
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            listBox2.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
             ListBox lb = (ListBox)sender;
             Data.selectedStation1 = lb.SelectedItem as Station;
 
             listBox2.Items.Clear();
+            price.Text = "";
+
             if (Data.selectedStation1 != null)
             {
                 var rootObject = (App.Current as App).RootObject;
@@ -173,6 +182,11 @@ namespace Demo
 
         private void listBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            listView1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            price.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            blockPrice.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            button1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
             ListBox lb = (ListBox)sender;
             Data.selectedStation2 = lb.SelectedItem as Station;
 
