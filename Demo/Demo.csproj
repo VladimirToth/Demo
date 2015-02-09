@@ -149,7 +149,6 @@
     </AppxManifest>
     <None Include="Demo_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <None Include="stations.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Background.jpg" />
