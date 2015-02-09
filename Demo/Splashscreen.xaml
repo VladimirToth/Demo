@@ -9,7 +9,7 @@
 
     <Grid Background="Red">
         <Canvas>
-            <Image x:Name="splashImage" Source="Assets/SplashScreen.png" Canvas.Top="10" RenderTransformOrigin="0.484,0.493"/>
+            <Image x:Name="splashImage" Source="Assets/SplashScreen.png" Canvas.Top="10" RenderTransformOrigin="0.484,0.493" Stretch="UniformToFill"/>
             <ProgressRing Width="20" Foreground="Yellow" Name="splashProgressRing" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
             <ProgressRing Width="40" Height="40" Foreground="DarkRed" Name="splashProgressRing1" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
             <ProgressRing Width="60" Height="35" Foreground="Gold" Name="splashProgressRing2" IsActive="True" HorizontalAlignment="Center"></ProgressRing>
